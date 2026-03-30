@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل دخول المسئول | صيدلية حيا</title>
     <link rel="icon" type="image/png" href="<?= SITE_URL ?>/assets/images/favicon.png">
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/main.css">
+    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/main.css?v=0.02">
     <style>
         body { 
             background: #E9E0D9; 
@@ -96,6 +96,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         .form-group label { color: var(--color-muted-fg); font-weight: 700; }
         .footer-hint { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: var(--color-muted-fg); }
+        
+        @media (max-width: 576px) {
+            .login-card { padding: 2rem 1.5rem; border-radius: 1.5rem; margin: 1rem; max-width: calc(100% - 2rem); }
+            .login-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+            .login-pattern { background-size: 300px; }
+        }
     </style>
 </head>
 <body>

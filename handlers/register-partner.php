@@ -14,17 +14,33 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // ── Collect and validate inputs ───────────────────────────────
-$name   = clean($_POST['reg_name']   ?? '');
-$mobile = clean($_POST['reg_mobile'] ?? '');
-$dob    = clean($_POST['reg_dob']    ?? '');
-$gender = clean($_POST['reg_gender'] ?? '');
+$name     = clean($_POST['name']      ?? '');
+$mobile   = clean($_POST['mobile']    ?? '');
+$dob      = clean($_POST['dob']       ?? '');
+$gender   = clean($_POST['gender']    ?? '');
+$secretId = clean($_POST['secret_id'] ?? '');
+
+// Normalize Arabic numbers to English
+$arabicNum = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+$englishNum = ['0','1','2','3','4','5','6','7','8','9'];
+$mobile = str_replace($arabicNum, $englishNum, $mobile);
+
+// Strip anything that is not a digit or a plus sign
+$mobile = preg_replace('/[^0-9+]/', '', $mobile);
+
+// Map Arabic gender to standard values for stats
+if ($gender === 'ذكر') {
+    $gender = 'male';
+} elseif ($gender === 'أنثى' || $gender === 'انثى') {
+    $gender = 'female';
+}
 
 $errors = [];
 
 if (mb_strlen($name) < 3) {
     $errors[] = 'الاسم يجب أن يكون 3 أحرف على الأقل';
 }
-if (!preg_match('/^[0-9+]{7,15}$/', $mobile)) {
+if (!preg_match('/^[0-9+]{7,20}$/', $mobile)) {
     $errors[] = 'رقم الهاتف غير صحيح';
 }
 
@@ -34,6 +50,9 @@ if (!empty($dob) && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $dob)) {
 }
 if (!empty($gender) && !in_array($gender, ['male', 'female'])) {
     $errors[] = 'الجنس غير صحيح';
+}
+if (empty($secretId)) {
+    $errors[] = 'يرجى إدخال الرقم السري';
 }
 
 if (!empty($errors)) {
@@ -53,15 +72,15 @@ try {
     $cardNumber = generateCardNumber(PARTNER_PREFIX, 'partners_cards');
 
     $insert = $db->prepare(
-        'INSERT INTO partners_cards (card_number, full_name, mobile_number, gender, date_of_birth)
-         VALUES (?, ?, ?, ?, ?)'
+        'INSERT INTO partners_cards (card_number, full_name, mobile_number, gender, date_of_birth, passcode, created_at)
+         VALUES (?, ?, ?, ?, ?, ?, NOW())'
     );
-    $insert->execute([$cardNumber, $name, $mobile, $gender, $dob]);
+    $insert->execute([$cardNumber, $name, $mobile, $gender, $dob, $secretId]);
 
     jsonResponse(true, 'تم التسجيل بنجاح', [
         'card_number' => $cardNumber,
         'name'        => $name,
     ]);
 } catch (PDOException $e) {
-    jsonResponse(false, 'حدث خطأ أثناء التسجيل، حاول مرة أخرى');
+    jsonResponse(false, 'حدث خطأ أثناء التسجيل: ' . $e->getMessage());
 }

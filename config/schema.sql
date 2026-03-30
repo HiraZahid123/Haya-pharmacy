@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS partners_cards (
     mobile_number VARCHAR(20) NOT NULL          COMMENT 'رقم التليفون',
     gender        ENUM('male','female') NOT NULL COMMENT 'جنس',
     date_of_birth DATE NOT NULL                 COMMENT 'تاريخ الميلاد',
+    passcode      VARCHAR(50) NULL              COMMENT 'الرقم السري',
     created_at    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'التاريخ والوقت'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

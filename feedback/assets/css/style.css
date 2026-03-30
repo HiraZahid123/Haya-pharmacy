@@ -1,0 +1,636 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap");
+
+/* Add pattern to body using multiple backgrounds instead */
+body {
+  background-color: #e9e0d9;
+  font-family: "Tajawal", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Center content vertically */
+  position: relative;
+  overflow-y: auto;
+  /* Allow scroll for short screens */
+}
+
+.bg-pattern {
+  position: fixed;
+  width: 288px;
+  height: 412.08px;
+  opacity: 1;
+  z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  filter: brightness(1);
+}
+
+.pattern-top-left {
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background-image: url("../images/haya%20pattern%20%201.svg");
+  background-position: top left;
+  transform: rotate(0deg);
+}
+
+.pattern-top-right {
+  height: 300px;
+  width: 214px;
+  top: 0;
+  right: 0;
+  background-image: url("../images/haya%20pattern%20%202.svg");
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.pattern-bottom-left {
+  height: 300px;
+  width: 210px;
+  bottom: 0;
+  left: 0;
+  background-image: url("../images/haya%20pattern%203.svg");
+  background-position: bottom left;
+  transform: rotate(180deg);
+}
+
+.pattern-bottom-right {
+  height: 300px;
+  width: 210px;
+  bottom: 0;
+  right: 0;
+  background-image: url("../images/haya%20pattern%20%204.svg");
+  background-position: center;
+  transform: rotate(0deg);
+}
+
+.bg-pattern-comments {
+  position: fixed;
+  width: 288px;
+  height: 412.08px;
+  opacity: 1;
+  z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  filter: brightness(1);
+}
+
+.pattern-top-left-comments {
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background-image: url("../images/haya%20pattern%20%201.svg");
+  background-position: top left;
+  transform: rotate(0deg);
+}
+
+.pattern-top-right-comments {
+  height: 300px;
+  width: 214px;
+  top: 0;
+  right: 0;
+  background-image: url("../images/haya%20pattern%20%202.svg");
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.pattern-bottom-left-comments {
+  height: 300px;
+  width: 210px;
+  bottom: 0;
+  left: 0;
+  background-image: url("../images/haya%20pattern%203.svg");
+  background-position: bottom left;
+  transform: rotate(180deg);
+}
+
+.pattern-bottom-right-comments {
+  height: 300px;
+  width: 210px;
+  bottom: 0;
+  right: 0;
+  background-image: url("../images/haya%20pattern%20%204.svg");
+  background-position: center;
+  transform: rotate(0deg);
+}
+
+/* Thank You Page Typography & Logo */
+.thanks-logo {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.thanks-title {
+  color: #bb9960;
+  font-family: "Tajawal", sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.thanks-subtitle {
+  color: #bb9960;
+  font-family: "Tajawal", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 100%;
+  text-align: center;
+}
+
+/* Hide mobile header logo on desktop */
+.mobile-header-logo {
+  display: none;
+}
+
+/* Top Header text and Container */
+.header-container {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  z-index: 5;
+  position: relative;
+}
+
+.desktop-header-logo {
+  width: 31%; /* Increased from 130px */
+  height: auto;
+  object-fit: contain;
+}
+
+.desktop-spacer {
+  width: 130px;
+}
+
+.header-title {
+  color: #bb9960;
+  /* Haya/Sand */
+  font-family: "Tajawal", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  width: auto;
+  opacity: 1;
+  margin: 0;
+}
+
+/* Main Inner Card */
+.survey-card {
+  background-color: #efe5dd;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+  margin-bottom: 30px;
+}
+
+/* Logo & Question Header */
+.card-header-custom {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 32%;
+}
+
+.question-text {
+  font-family: "Tajawal", sans-serif;
+  color: #015645;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+/* Emojis */
+.emojis-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.emoji-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.emoji-btn:hover {
+  transform: scale(1.1);
+}
+
+.emoji-img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.emoji-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+}
+
+.emoji-label {
+  color: #c09068;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Pagination / Progress indicators */
+.progress-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.progress-line {
+  width: 50px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #d7c9bb;
+}
+
+.progress-line.active {
+  background-color: #c09068;
+}
+
+/* Back / Next Buttons */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-custom {
+  padding: 10px 40px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Left button / Next */
+.btn-next {
+  background-color: #015645;
+  color: #ffffff;
+  border: 2px solid #015645;
+}
+
+.btn-next:hover {
+  background-color: #014336;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(1, 86, 69, 0.3);
+}
+
+/* Right button / Back */
+.btn-back {
+  background-color: transparent;
+  color: #015645;
+  border: 1px solid #015645;
+}
+
+.btn-back:hover {
+  background-color: rgba(1, 86, 69, 0.05);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  .desktop-header-logo {
+    width: 31%;
+    order: -1; 
+  }
+  .desktop-spacer {
+    display: none;
+  }
+
+  .card-header-custom {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+
+
+  .question-text {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .thanks-logo {
+    width: 160px;
+    height: 220px;
+  }
+
+  .thanks-title {
+    font-size: 115px;
+    line-height: 110%;
+  }
+}
+
+/* Global/New Styles (Outside Media Query) */
+.emoji-btn.selected {
+  background-color: rgba(1, 86, 69, 0.1);
+  transform: scale(1.1);
+  border: 2px solid #015645;
+}
+
+textarea.form-control,
+input.form-control {
+  background-color: #f8f1eb;
+  border: 1px solid #d7c9bb;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: "Tajawal", sans-serif;
+}
+
+textarea.form-control:focus,
+input.form-control:focus {
+  background-color: #ffffff;
+  border-color: #015645;
+  box-shadow: 0 0 0 0.25rem rgba(1, 86, 69, 0.1);
+}
+
+.color-primary {
+  color: #015645;
+}
+
+.logo-vertical {
+  width: 32%;
+  height: auto;
+  margin-bottom: 15px;
+}
+.form-label-custom {
+  color: #015645;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+  text-align: right;
+}
+
+#comments-view {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.comments-header {
+  margin-bottom: 10px;
+}
+
+.survey-card.comments-step-active {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Hide header title, container, and progress dots on comments page */
+body.comments-step-active .header-title,
+body.comments-step-active .header-container,
+.comments-step-active .progress-container,
+body.comments-step-active .mobile-header-logo {
+  display: none !important;
+}
+
+.comments-step-active .btn-next {
+  background-color: #015645;
+  border-color: #015645;
+  color: #ffffff;
+  width: 150px;
+  padding: 8px 10px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.comments-step-active .btn-back {
+  display: none;
+}
+
+.comments-step-active textarea.form-control,
+.comments-step-active input.form-control {
+  background-color: transparent;
+  border: 1.5px solid #bb9960;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 18px;
+  text-align: right;
+  width: 100%;
+}
+
+.comments-step-active .buttons-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Mobile Specific Overrides */
+@media (max-width: 576px) {
+  body {
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+  }
+
+  /* Keep patterns original size by removing mobile overrides */
+
+  .survey-card {
+    width: 92%;
+    max-width: 400px;
+    min-height: auto;
+    border-radius: 12px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto 15px auto;
+  }
+
+  .card-header-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+    gap: 10px;
+  }
+
+  .question-text {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .emojis-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .emoji-wrapper {
+    width: 80px;
+    gap: 5px;
+  }
+
+  .emoji-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .emoji-label {
+    font-size: 13px;
+    min-height: auto;
+  }
+
+  .thanks-title {
+    font-size: 70px;
+    margin-top: 40px;
+  }
+
+  .thanks-subtitle {
+    font-size: 20px;
+  }
+
+  .thanks-logo {
+    width: 31%;
+    height: 140px;
+  }
+
+  .desktop-header-logo {
+    width: 31%; /* Increased for mobile from 110px */
+  }
+
+  .header-title {
+    font-size: 32px;
+  }
+
+  .buttons-container {
+    gap: 10px;
+  }
+
+  .btn-custom {
+    padding: 8px 16px;
+    font-size: 15px;
+    border-radius: 20px;
+  }
+
+  .survey-card.comments-step-active {
+    width: 95%;
+    padding: 0;
+  }
+
+  .comments-step-active .btn-next {
+    width: 140px;
+    max-width: 100%;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .logo-vertical {
+    width: 31%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  #comments-view {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-control,
+  .comments-step-active textarea.form-control,
+  .comments-step-active input.form-control {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+#selection-error {
+
+    color: #dc3545;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#selection-error.visible {
+    visibility: visible;
+    opacity: 1;
+}

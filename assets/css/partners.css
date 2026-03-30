@@ -1,0 +1,1206 @@
+/* ============================================================
+   pioneers-thanks.css
+   REBUILT TO MATCH FIGMA DESIGN EXACTLY
+   ============================================================ */
+
+/* ── Typography and Variables ─────────────────────────────── */
+:root {
+    --pt-beige:        #E9E0D9;
+    --pt-beige-light:  #F5EDE6;
+    --pt-green:        #015645;
+    --pt-gold:         #BB9960;
+    --pt-white:        #FFFFFF;
+    --pt-black:        #000000;
+    --font-heading:    'Madani Arabic Demo', 'Tajawal', sans-serif;
+    --font-body:       'Madani Arabic Demo', 'Tajawal', sans-serif;
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll globally */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--pt-beige-light);
+    font-family: var(--font-body);
+    direction: rtl;
+}
+
+/* ── Custom Top Bar ───────────────────────────────────────── */
+.pt-top-bar {
+    background-color: var(--pt-beige);
+    padding: 1.5rem 3rem;
+    border-bottom: 2px solid rgba(187,153,96,0.1);
+}
+
+.pt-top-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex !important;
+    flex-direction: row !important; /* Logo Right, Icons Left in RTL */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pt-top-right { order: 1 !important; }
+.pt-top-left { order: 2 !important; }
+
+.pt-top-left {
+    display: flex;
+    align-items: center;
+}
+
+.pt-social-icons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.pt-social-link {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background-color: var(--pt-gold);
+    color: var(--pt-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.pt-social-link:hover {
+    background-color: var(--pt-green);
+    transform: translateY(-3px);
+}
+
+.pt-main-logo {
+    height: 6rem;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.pt-hero {
+    position: relative;
+    background-color: var(--pt-white);
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.pt-hero-pattern-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pt-hero-frame-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pt-hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Doctor figure (left) */
+.pt-hero-doctor-wrap {
+    min-width: 55%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.pt-hero-doctor-img {
+    max-width: min(876px, 55vw);
+    max-height: 603px;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    top: 4rem;
+    left: 6rem;
+}
+
+/* Hero text (Desktop) */
+.pt-hero-text-wrap.pt-desktop-only {
+    flex: 1;
+    z-index: 5;
+    margin-right: 3%;
+    text-align: right;
+    position: relative;
+    right: 1rem;
+}
+
+/* Hero text (Mobile version in header) */
+.pt-hero-text-wrap.pt-mobile-only {
+    display: none; /* Hidden on desktop */
+}
+
+.pt-mobile-only { display: none; }
+.pt-desktop-only { display: block; }
+
+.pt-welcome-msg-header {
+    display: none; /* Desktop hidden */
+}
+
+.pt-hero-title {
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+    font-family: var(--font-heading);
+}
+
+/* Row 1: "شكراً لثقتك،  شكراً لأنك" — all on ONE line */
+.pt-title-row-1 {
+    display: flex;
+    flex-direction: row; /* side by side */
+    align-items: center;
+    white-space: nowrap;
+    gap: 0.5rem;
+}
+
+.pt-text-white {
+    color: var(--pt-white) !important;
+}
+
+.pt-text-green {
+    color: var(--pt-green) !important;
+}
+
+/* Row 2: شكراً لأنك من */
+.pt-title-row-2 {
+    display: block;
+    text-align: right;
+}
+
+.pt-text-gold {
+    font-weight: bold;
+}
+/* Row 3: "الأوائل" */
+.pt-title-row-3 {
+    display: block;
+    text-align: right;
+}
+
+/* ── Section Two ──────────────────────────────────────────── */
+.pt-section-two {
+    position: relative;
+    background-color: var(--pt-beige-light);
+    padding: 6rem 4rem;
+    overflow: hidden;
+}
+
+.pt-section-two-pattern-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.pt-pattern-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pt-section-two-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse; /* Visual LEFT = diagram, Visual RIGHT = text */
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Left visual: pharmacy image + heart icon stacked */
+.pt-section-two-visual {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* Pharmacy image */
+.pt-section-two-diagram {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    object-fit: cover;
+}
+
+/* Heart icon card (green square with heart) */
+.pt-heart-card {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--pt-green);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3rem; /* overlap slightly */
+    margin-right: 1rem;
+    box-shadow: 0 8px 24px rgba(1,86,69,0.25);
+}
+
+.pt-heart-card i {
+    font-size: 2rem;
+    color: var(--pt-white);
+}
+
+/* Haya logo below image (as shown in Figma) */
+.pt-section-logo {
+    height: 5rem;
+    width: auto;
+    object-fit: contain;
+    margin-top: 0.5rem;
+}
+
+/* Right side: text content */
+.pt-section-two-content {
+    flex: 1;
+    text-align: right;
+}
+
+.pt-section-two-heading {
+    font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+    font-weight: 800;
+    color: var(--pt-green);
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    font-family: var(--font-heading);
+}
+
+.pt-section-two-subheading {
+    color: var(--pt-green);
+}
+
+.pt-section-two-body {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.pt-section-two-body p {
+    margin-bottom: 1.5rem;
+}
+
+.pt-welcome-msg {
+    font-weight: 700;
+    color: var(--pt-green);
+    font-size: 1.15rem;
+}
+
+.pt-brand-name {
+    color: var(--pt-green);
+}
+
+/* Visibility Utilities */
+@media (max-width: 768px) {
+    .desktop-only-bottom { display: none !important; }
+}
+
+/* ── Features Section ─────────────────────────────────────── */
+.pt-features-section {
+    background-color: var(--pt-beige-light);
+    padding: 4rem 4rem 6rem;
+}
+
+.pt-features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pt-features-heading {
+    text-align: center;
+    font-size: clamp(2rem, 3.2vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pt-green);
+    margin-bottom: 3rem;
+    font-family: var(--font-heading);
+}
+
+/* Grid: 2 columns, last card spans full width */
+.pt-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.pt-feature-card {
+    background-color: var(--pt-white);
+    border-radius: 1.25rem;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: row-reverse; /* Text RIGHT, Icon LEFT in RTL */
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    gap: 1.5rem;
+}
+
+.pt-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Last card spans full width */
+.pt-feature-card:last-child {
+    grid-column: span 2;
+}
+
+.pt-feature-text {
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--pt-green);
+    text-align: right;
+}
+
+/* Icon circle */
+.pt-feature-icon-outer {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--pt-beige-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pt-feature-icon-inner {
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: var(--pt-gold);
+    color: var(--pt-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+/* Wide card content */
+.pt-feature-card-wide .pt-feature-text-block {
+    flex: 1;
+    text-align: right;
+}
+
+.pt-feature-title-bold {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--pt-green);
+    margin-bottom: 0.4rem;
+}
+
+.pt-feature-desc {
+    font-size: 0.95rem;
+    color: var(--pt-green);
+    line-height: 1.6;
+}
+
+/* ── Footer CTA ───────────────────────────────────────────── */
+.pt-footer-cta-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.pt-btn-green {
+    background-color: var(--pt-green);
+    color: var(--pt-white);
+    padding: 0.9rem 2.5rem;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.pt-btn-green:hover {
+    background-color: #014134;
+    transform: scale(1.04);
+}
+
+.pt-footer-note {
+    color: #BB9960;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* ── Extra Info Cards Section (Figma image 3) ─────────────── */
+.pt-info-section {
+    background-color: var(--pt-beige-light);
+    padding: 4rem;
+    border-top: 1px solid rgba(187,153,96,0.2);
+}
+
+.pt-info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.pt-info-card {
+    background-color: var(--pt-white);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.pt-info-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pt-info-card-body {
+    padding: 2rem;
+    text-align: right;
+}
+
+.pt-info-card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--pt-green);
+    margin-bottom: 1.25rem;
+    font-family: var(--font-heading);
+}
+
+.pt-info-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pt-info-card-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    flex-direction: row; /* Icon on the RIGHT in RTL */
+}
+
+.pt-info-card-list li i {
+    color: var(--pt-gold);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.pt-info-card-list li strong {
+    color: var(--pt-green);
+}
+
+/* ── Why choose Haya? (Gold Background) ─────────────────── */
+.pt-why-section {
+    background-color: var(--pt-gold);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--pt-white);
+}
+
+.pt-why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pt-why-heading {
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    font-weight: 800;
+    margin-bottom: 3.5rem;
+    font-family: var(--font-heading);
+    text-align: right;
+    color: white;
+}
+
+.pt-why-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.pt-why-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.pt-why-icon-wrap {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: #015645;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pt-why-icon-wrap-award {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: #015645;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pt-why-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    object-fit: contain;
+}
+
+.pt-why-icon-award {
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: contain;
+}
+
+/* ── Ready to Order? Section ──────────────────────────────── */
+.pt-ready-section {
+    background-color: var(--pt-beige-light);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.pt-ready-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pt-ready-heading {
+    font-size: clamp(2rem, 3.2vw, 3.2rem);
+    font-weight: 800;
+    color: var(--pt-green);
+    margin-bottom: 3rem;
+    font-family: var(--font-heading);
+}
+
+.pt-ready-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.pt-btn-ready {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.pt-btn-whatsapp {
+    background-color: var(--pt-green);
+    color: var(--pt-white);
+}
+
+.pt-btn-hotline {
+    background-color: var(--pt-gold);
+    color: var(--pt-white);
+}
+
+.pt-btn-ready:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.pt-btn-ready i {
+    font-size: 1.6rem;
+}
+
+/* ── Simple Footer Bar (Baghdad only) ─────────────────────── */
+.pt-footer-bar {
+    background-color: var(--pt-green);
+    color: var(--pt-white);
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* ── Simple Footer ────────────────────────────────────────── */
+.pt-simple-footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* ── Registration Modal ────────────────────────────────────────── */
+.pt-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(1, 86, 69, 0.85); /* Haya Dark Green Overlay */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    padding: 1.5rem;
+}
+
+.pt-modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.pt-modal-content {
+    background-color: #F1E9E2; /* Premium Beige */
+    background-image: url('../images/haya pattern 3.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    max-width: 440px;
+    max-height: 95vh;
+    overflow-y: auto;
+    border-radius: 2rem;
+    position: relative;
+    padding: 2.5rem; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+    scrollbar-width: thin;
+    scrollbar-color: var(--pt-green) transparent;
+}
+
+.pt-modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pt-modal-content::-webkit-scrollbar-thumb {
+    background-color: var(--pt-green);
+    border-radius: 10px;
+}
+
+.pt-modal-overlay.open .pt-modal-content {
+    transform: translateY(0);
+}
+
+.pt-modal-close {
+    position: sticky; /* Sticky ensures it stays at the top while scrolling */
+    top: 0;
+    float: right;
+    margin-right: -1rem;
+    margin-top: -1.5rem;
+    background: #F1E9E2; /* Match modal bg to blend when sticky */
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 100;
+}
+
+.pt-register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.pt-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pt-form-group label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--pt-green);
+    text-align: right;
+}
+
+.pt-form-control {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: var(--pt-white);
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center; /* Matching screenshot placeholder alignment */
+    font-family: var(--font-body);
+}
+
+.pt-form-control::placeholder {
+    color: #bbb;
+}
+
+.pt-btn-submit {
+    margin-top: 1rem;
+    background-color: var(--pt-green);
+    color: var(--pt-white);
+    border: none;
+    padding: 1.1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.pt-btn-submit:hover {
+    background-color: #014537;
+    transform: translateY(-2px);
+}
+
+.pt-modal-success {
+    text-align: center;
+    padding: 1rem 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pt-modal-success.show { 
+    display: flex; 
+}
+
+.success-top-content {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--pt-green);
+    margin-bottom: 1.5rem;
+}
+
+.success-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--pt-green);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.success-body-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.success-body-text {
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.success-card-num-wrap {
+    background: rgba(1, 86, 69, 0.05);
+    border: 2px dashed var(--pt-gold);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.success-card-num {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--pt-gold);
+    letter-spacing: 2px;
+}
+
+.success-footer-note {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--pt-green);
+}
+
+.success-logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 2rem 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.success-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.success-logo-item img {
+    height: 3rem;
+    width: auto;
+}
+
+.success-logo-item span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--pt-gold);
+}
+
+.success-logo-item .partner-text {
+    color: var(--pt-gold);
+}
+
+.success-footer-btn {
+    margin-top: 2rem;
+}
+
+.pt-form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23BB9960" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    padding-left: 2.5rem;
+    cursor: pointer;
+}
+
+.pt-form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23BB9960" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    padding-left: 2.5rem;
+    cursor: pointer;
+}
+
+.form-error {
+    color: #d9534f;
+    font-size: 0.85rem;
+    text-align: right;
+    display: none;
+}
+
+.form-error.show { display: block; }
+
+.global-error {
+    color: #d9534f;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+}
+
+/* ── Responsive Refinements ────────────────────────────────── */
+
+/* Tablet (Up to 1024px) */
+@media (max-width: 1024px) {
+    .pt-top-container { padding: 1.5rem 2.5rem; }
+    .pt-hero-container { gap: 2rem; }
+    .pt-hero-title { font-size: 2.5rem; }
+    .pt-features-grid { grid-template-columns: repeat(2, 1fr); }
+    .pt-feature-card:last-child { grid-column: span 2; }
+    .pt-info-container { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+
+/* Small Tablet / Mobile (Up to 768px) */
+@media (max-width: 768px) {
+    .pt-top-bar { padding: 1rem; }
+    .pt-top-container { 
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0rem;
+    }
+    .pt-main-logo { height: 3.5rem; }
+.pt-social-icons{
+    gap: 0.3rem;
+}
+    .pt-header-hero-title-mob {
+        display: block;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+    
+    .pt-header-hero-title-mob .pt-hero-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    .pt-social-link { width: 2.2rem; height: 2.2rem; font-size: 0.8rem; }
+
+    .pt-hero-pattern-bg { display: none; } /* Hide large screen pattern on mobile */
+
+    .pt-hero { 
+        min-height: unset; 
+        padding: 2rem 0 0; 
+        background-color: #F1EDE7; 
+        background-image: url('../images/Ellipse13.svg');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 300px auto; /* 👈 width control */
+    }
+
+    .pt-hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center;
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .pt-mobile-only { display: block !important; }
+    .pt-desktop-only { display: none !important; }
+
+    .pt-hero-text-wrap.pt-mobile-only {
+        display: block !important;
+        width: 100%;
+        margin: 1.5rem 0 0;
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+
+    .pt-hero-title {
+        font-size: 2rem;
+        text-align: center;
+        color: var(--pt-green);
+    }
+
+    .pt-text-white { color: var(--pt-gold) !important; } /* Gold instead of white on mobile beige */
+    
+    .pt-title-row-1 {
+        margin-bottom: 0.1rem;
+    }
+    
+    .pt-title-row-2 { 
+        text-align: right; 
+        margin-bottom: 0.1rem;
+    }
+
+    .pt-title-row-3 {
+        text-align: right;
+    }
+
+    .pt-hero-doctor-wrap {
+        width: 225%;
+        justify-content: center;
+        overflow: visible;
+        position: relative;
+        padding: 0rem 0rem 0rem 13rem;
+    }
+    
+    /* The Green Arc Effect matching screenshot */
+    /* .pt-hero-doctor-wrap::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120%;
+        height: 80%;
+        background-color: var(--pt-green);
+        border-radius: 50% 50% 0 0;
+        z-index: 1;
+    } */
+
+    .pt-hero-doctor-img {
+        max-width: 70%;
+        height: auto;
+        margin-bottom: -1px; /* seamless transition to next section */
+    }
+
+    .pt-section-two-container {
+        display: flex !important;
+        flex-direction: column !important; /* Force column then use orders */
+        gap: 1.5rem !important;
+        padding: 0 1.5rem !important;
+        width: 100% !important;
+    }
+
+    .pt-section-two-content { order: 1 !important; }
+    .pt-section-two-visual { order: 2 !important; }
+
+    .pt-section-two-content { text-align: center; width: 100%; }
+    .pt-section-two-heading { font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem; }
+    .pt-section-two-body { text-align: right;color: var(--pt-green); }
+    .pt-welcome-msg { margin-top: 2rem; }
+
+    .pt-features-grid { grid-template-columns: 1fr; width: 100%; }
+    .pt-feature-card:last-child { grid-column: span 1; }
+    .pt-info-container { grid-template-columns: 1fr; width: 100%; }
+
+    .pt-ready-btns { flex-direction: column; width: 100%; }
+    .pt-btn-ready { width: 100%; justify-content: center; }
+    .pt-footer-cta-container { flex-direction: column; align-items: center; gap: 1.5rem; }
+    .pt-btn-green { width: 100%; }
+}
+
+/* Small Mobile (Up to 480px) */
+@media (max-width: 480px) {
+    .pt-hero-title { font-size: 1.7rem; }
+    .pt-section-two-heading { font-size: 1.3rem;text-align: right; }
+    .pt-info-section {
+    background-color: var(--pt-beige-light);
+    padding: 1rem;
+    border-top: 1px solid rgba(187,153,96,0.2);
+}
+.pt-section-two {
+    position: relative;
+    background-color: var(--pt-beige-light);
+    padding: 4rem 1rem;
+    overflow: hidden;
+}
+.pt-features-section{
+    padding: 4rem 1rem 6rem;
+}
+.pt-feature-icon-inner {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--pt-gold);
+    color: var(--pt-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+.pt-feature-icon-outer {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--pt-beige-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pt-feature-text {
+    flex: 1;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--pt-green);
+    text-align: right;
+}
+.pt-feature-card{
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+}
+.pt-feature-title-bold{
+    font-size: 1rem;
+}
+.pt-feature-desc{
+    font-size: .7rem;
+}
+.pt-hero { 
+        min-height: unset; 
+        padding: 2rem 0 0; 
+        background-color: #F1EDE7; 
+        background-image: url('../images/Ellipse13.svg');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 320px auto; /* 👈 width control */
+    }
+    .pt-hero-doctor-img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: -1px; /* seamless transition to next section */
+    }
+.pt-hero-doctor-wrap{
+    padding: 0rem 0rem 0rem 4rem;
+}
+
+.pt-btn-ready {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+.pt-why-heading {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+.pt-why-icon-wrap-award {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.pt-why-icon-wrap {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.pt-text-why-feature{
+    font-size: 1rem;
+}
+.pt-why-grid{
+    gap: 2rem;
+}
+.pt-social-link{
+    width: 2rem;
+    height: 2rem;
+}
+}

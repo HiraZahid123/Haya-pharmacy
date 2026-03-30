@@ -14,7 +14,8 @@ $siteUrl   = defined('SITE_URL') ? SITE_URL : '/Haya-Pharmacy';
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/x-icon" href="<?= $siteUrl ?>/favicon.ico">
     <link rel="icon" type="image/png" href="<?= SITE_URL ?>/assets/images/favicon.png">
-    <link rel="stylesheet" href="<?= $siteUrl ?>/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="<?= $siteUrl ?>/assets/css/main.css?v=2.7">
     <?php if (!empty($extraCss)): ?>
         <?php foreach ($extraCss as $css): ?>
             <link rel="stylesheet" href="<?= $siteUrl ?>/assets/css/<?= $css ?>">
@@ -38,6 +39,9 @@ $siteUrl   = defined('SITE_URL') ? SITE_URL : '/Haya-Pharmacy';
     src="https://www.facebook.com/tr?id=925043297093520&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <script>
+        window.HAYA_SITE_URL = "<?= $siteUrl ?>";
+    </script>
 </head>
 <body>
 
@@ -101,32 +105,68 @@ $siteUrl   = defined('SITE_URL') ? SITE_URL : '/Haya-Pharmacy';
         <a href="<?= $siteUrl ?>/pages/feedback.php" style="color: #fff; font-size: 1.25rem; font-weight: 700;">تقييم الخدمة</a>
     </nav>
 
-    <div class="header-social">
-        <a href="#" class="social-icon" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="width:1.25rem;height:1.25rem;stroke:#fff">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
+    <!-- Social Media Icons in Mobile Menu -->
+    <div class="mobile-menu-socials">
+        <a href="https://www.instagram.com/hayaph_2026/" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
         </a>
-        <a href="#" class="social-icon" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" style="width:1.25rem;height:1.25rem;fill:#fff">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-            </svg>
+        <a href="https://www.tiktok.com/@haya.ph1?_r=1&_t=zs-93aovdh9fvu" target="_blank" class="social-icon" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.snapchat.com/add/haya_ph2026" target="_blank" class="social-icon" aria-label="Snapchat">
+            <i class="fab fa-snapchat-ghost"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61585951153868" target="_blank" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.link/11ohbt" target="_blank" class="social-icon" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 </div>
 <!-- Header JS -->
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
     var header   = document.getElementById('siteHeader');
-    var toggle   = document.getElementById('menuToggle');
     var menu     = document.getElementById('mobileMenu');
     var closeBtn = document.getElementById('menuClose');
+    
+    // Toggles for opening (Standard and Partners)
+    var openToggles = [
+        document.getElementById('menuToggle'),
+        document.getElementById('partnersMenuToggle')
+    ];
 
     window.addEventListener('scroll', function(){
-        header.classList.toggle('scrolled', window.scrollY > 30);
+        if (header) header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+ 
+    // Attach open logic to any existing toggle
+    openToggles.forEach(function(toggle) {
+        if (toggle && menu) {
+            toggle.addEventListener('click', function(){ 
+                menu.classList.add('open');    
+                document.body.style.overflow = 'hidden'; 
+            });
+        }
     });
 
-    toggle.addEventListener('click',   function(){ menu.classList.add('open');    document.body.style.overflow = 'hidden'; });
-    closeBtn.addEventListener('click', function(){ menu.classList.remove('open'); document.body.style.overflow = ''; });
-})();
+    // Close logic
+    if (closeBtn && menu) {
+        closeBtn.addEventListener('click', function(){ 
+            menu.classList.remove('open'); 
+            document.body.style.overflow = ''; 
+        });
+    }
+
+    // Optional: Click outside to close
+    if (menu) {
+        menu.addEventListener('click', function(e){
+            if(e.target === menu) {
+                menu.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
 </script>
