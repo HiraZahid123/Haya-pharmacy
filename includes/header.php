@@ -20,10 +20,11 @@ $siteUrl   = defined('SITE_URL') ? SITE_URL : '/Haya-Pharmacy';
         <?php foreach ($extraCss as $css): ?>
             <link rel="stylesheet" href="<?= $siteUrl ?>/assets/css/<?= $css ?>">
         <?php endforeach; ?>
-    <?php endif; ?>
+    <?php endif; ?> 
 
     <!-- Meta Pixel Code -->
-    <script>
+    <script>   
+    
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
