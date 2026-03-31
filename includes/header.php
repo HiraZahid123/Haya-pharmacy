@@ -110,7 +110,7 @@ $siteUrl   = defined('SITE_URL') ? SITE_URL : '/Haya-Pharmacy';
         <a href="<?= $siteUrl ?>/pages/pioneers.php" style="color: #fff; font-size: 1.2rem; font-weight: 700; padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">برنامج الأوائل</a>
         <a href="<?= $siteUrl ?>/pages/partners.php" style="color: #fff; font-size: 1.2rem; font-weight: 700; padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">برنامج الشركاء</a>
         <a href="<?= $siteUrl ?>/pages/questionnaire.php" style="color: #fff; font-size: 1.2rem; font-weight: 700; padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">الفحص الصحي المجاني</a>
-        <a href="<?= $siteUrl ?>/pages/feedback.php" style="color: #fff; font-size: 1.2rem; font-weight: 700; padding: 1.1rem 0;">تقييم الخدمة</a>
+        <a href="https://demo2.ranatrader.com/feedback" style="color: #fff; font-size: 1.2rem; font-weight: 700; padding: 1.1rem 0;">تقييم الخدمة</a>
     </nav>
 
     <!-- Social Media Icons -->
