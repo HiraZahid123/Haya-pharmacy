@@ -313,7 +313,7 @@ include __DIR__ . '/../includes/header.php';
 
                 <div class="modal-btn-wrap">
                     <button type="submit" class="haya-btn-modal-submit">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-user-plus"></i>
                         فعل الآن
                     </button>
 

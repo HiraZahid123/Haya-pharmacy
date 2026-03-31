@@ -408,7 +408,7 @@ include __DIR__ . '/../includes/header.php';
                 <div id="globalError" class="global-error"></div>
 
                 <button type="submit" class="pt-btn-submit">
-                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-user-plus"></i>
                     فعل الآن
                 </button>
             </form>
