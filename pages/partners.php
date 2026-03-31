@@ -52,7 +52,7 @@ include __DIR__ . '/../includes/header.php';
     أهلا و مرحبا بك في أسرة  <span style="font-weight: bold; font-size: 1.2em;">صيدلية حيا</span>
 </p>
 
-                                <a href="#" class="haya-btn-dark-green open-reg-modal"> فعّل ميزات الشريك</a>
+                                <a href="#" class="haya-btn-dark-green open-reg-modal">فعّل البطاقة الآن</a>
 
             </div>
             <!-- Right: Visual -->

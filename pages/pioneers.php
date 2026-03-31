@@ -5,6 +5,7 @@ session_start();
 
 $pageTitle = 'بطاقة الأوائل - صيدلية حيا';
 $hideStandardHeader = true;
+$extraCss = ['partner-2.css'];
 include __DIR__ . '/../includes/header.php';
 ?>
 
