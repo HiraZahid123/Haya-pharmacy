@@ -3830,4 +3830,19 @@ input[type="date"].pt-form-control {
         font-size: 1rem;
         padding: 0.8rem 1.8rem;
     }
+}
+
+/* ── Hide modal scrollbars on mobile ───────────────────────── */
+@media (max-width: 768px) {
+    .pt-modal-content,
+    .reg-modal-content {
+        scrollbar-width: none;       /* Firefox */
+        -ms-overflow-style: none;    /* IE / Edge */
+    }
+
+    .pt-modal-content::-webkit-scrollbar,
+    .reg-modal-content::-webkit-scrollbar {
+        width: 0;
+        display: none;               /* Chrome / Safari */
+    }
 }
