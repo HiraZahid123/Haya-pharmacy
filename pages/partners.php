@@ -123,7 +123,7 @@ include __DIR__ . '/../includes/header.php';
     <!-- Terms & Conditions Section -->
     <section class="haya-partners-terms">
         <div class="haya-terms-container">
-            <h2 class="haya-terms-main-title">الشروط والأحكام الخاصة بعضوية الأوائل</h2>
+            <h2 class="haya-terms-main-title">الشروط والأحكام الخاصة بعضوية الشريك</h2>
 
             <div class="haya-terms-grid">
                 <!-- Row 1 -->
@@ -416,7 +416,7 @@ include __DIR__ . '/../includes/header.php';
 
         <div id="modalSuccess" class="pt-modal-success hide">
             <div class="success-top-content">
-                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="success-icon"><img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Success" style="width: 5rem; height: auto;"></div>
                 <h2 class="success-title">تم تفعيل كارت الشريك بنجاح</h2>
                 
                 <div class="success-body-rows">

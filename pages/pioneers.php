@@ -120,11 +120,11 @@ include __DIR__ . '/../includes/header.php';
                     <div class="haya-terms-row-subject">الصلاحية والتفعيل (غير قابلة للتجديد)</div>
                     <div class="haya-terms-row-content">
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>تسري صلاحية بطاقة العضوية لمدة <strong>ستة (6) أشهر</strong> فقط، تبدأ من تاريخ تفعيل البطاقة.</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p><strong>سياسة التجديد:</strong> هذه العضوية مخصصة لفترة محددة وهي <strong>غير قابلة للتجديد</strong> بنفس المزايا المجانية الحالية عند انتهائها. بعد انقضاء الستة أشهر، يمكن للعميل التقديم على باقات العضوية الجديدة المتوفرة في الصيدلية في حينه.</p>
                         </div>
                     </div>
@@ -135,19 +135,19 @@ include __DIR__ . '/../includes/header.php';
                     <div class="haya-terms-row-subject">الفحوصات والاستشارات المجانية</div>
                     <div class="haya-terms-row-content">
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>يحق للعضو أو أحد أفراد عائلته من حاملي البطاقة الحصول على <strong>فحص مجاني واحد شهرياً</strong>.</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>يختار العضو خدمة واحدة فقط من بين: (<strong>Skin Analyzer / InBody / Hair Analyzer</strong>).</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p><strong>شرط عدم التراكم:</strong> <span class="text-underline">تسقط الاستفادة من الفحص الشهري بانتهاء الشهر التقويمي، ولا يحق للعضو المطالبة بالخدمات غير المستخدمة أو تدويرها للأشهر التالية.</span></p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>تخضع الفحوصات لتوفر الأجهزة والمواعيد المتاحة لدى الصيدلية.</p>
                         </div>
                     </div>
@@ -158,11 +158,11 @@ include __DIR__ . '/../includes/header.php';
                     <div class="haya-terms-row-subject">السياسة السعرية والخصومات</div>
                     <div class="haya-terms-row-content">
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p><strong>الأدوية:</strong> التزاماً بالقوانين والأنظمة الصحية في العراق، تخضع جميع الأدوية لسياسة <strong>التسعيرة الجبرية</strong>، ولا يشملها أي نوع من أنواع الخصومات والعروض الترويجية تحت أي ظرف.</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>تقتصر الخصومات على المستلزمات غير الدوائية (كالتجميل والمكملات الغذائية) التي تحددها إدارة الصيدلية حصراً.</p>
                         </div>
                     </div>
@@ -173,11 +173,11 @@ include __DIR__ . '/../includes/header.php';
                     <div class="haya-terms-row-subject">خدمة التوصيل</div>
                     <div class="haya-terms-row-content">
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>توفر الصيدلية خدمة <strong>التوصيل المجاني</strong> للأعضاء داخل النطاق الجغرافي لمدينة <strong>بغداد</strong> حصراً.</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p><span class="text-underline">يحق للصيدلية تحديد حد أدنى لقيمة الطلبات للاستفادة من ميزة التوصيل المجاني.</span></p>
                         </div>
                     </div>
@@ -188,11 +188,11 @@ include __DIR__ . '/../includes/header.php';
                     <div class="haya-terms-row-subject">التواصل والخصوصية</div>
                     <div class="haya-terms-row-content">
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>يقر العضو بموافقته الصريحة على استلام الرسائل الترويجية، العروض، والتحديثات الطبية عبر تطبيق واتساب (<strong>WhatsApp</strong>) أو أي من وسائل الاتصال المسجلة.</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p>تلتزم الصيدلية بالحفاظ على خصوصية بيانات العضو وعدم مشاركتها مع أي أطراف خارجية.</p>
                         </div>
                     </div>
@@ -203,15 +203,15 @@ include __DIR__ . '/../includes/header.php';
                     <div class="haya-terms-row-subject">أحكام عامة</div>
                     <div class="haya-terms-row-content">
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p><strong>تعديل الشروط:</strong> تحتفظ إدارة الصيدلية بالحق في تعديل أو تغيير أي من هذه الشروط والأحكام، أو تعديل باقة المزايا، مع إخطار الأعضاء بأي تغييرات جوهرية.</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p><strong>إساءة الاستخدام:</strong> يحق للصيدلية إلغاء العضوية فوراً في حال ثبوت إساءة استخدام البطاقة أو تقديم معلومات غير صحيحة.</p>
                         </div>
                         <div class="haya-term-list-item">
-                            <i class="fas fa-check-circle"></i>
+                            <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
                             <p><strong>الإخلاء من المسؤولية:</strong> الفحوصات المقدمة (<strong>InBody/Skin/Hair</strong>) هي فحوصات استرشادية، ولا تغني عن الاستشارة الطبية المتخصصة في الحالات المرضية.</p>
                         </div>
                     </div>
