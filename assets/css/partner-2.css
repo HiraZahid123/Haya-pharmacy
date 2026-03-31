@@ -2447,7 +2447,7 @@ select.form-control {
 
 /* ── Top Bar ─────────────────────────────────────────────── */
 .haya-top-bar {
-    background: var(--haya-white);
+    background: #E9E0D9;
     padding: 1rem 5%;
     position: sticky;
     top: 0;
@@ -2457,10 +2457,10 @@ select.form-control {
 }
 
 .haya-top-bar.scrolled {
-    background: rgb(183 183 183 / 36%);
+    background: rgba(233, 224, 217, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgb(0 0 0 / 0%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
 }
 
 .haya-top-container {
