@@ -417,11 +417,11 @@ include __DIR__ . '/../includes/header.php';
         <div id="modalSuccess" class="pt-modal-success hide">
             <div class="success-top-content">
                 <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-                <h2 class="success-title">شكراً لك من القلب</h2>
+                <h2 class="success-title">تم تفعيل كارت الشريك بنجاح</h2>
                 
                 <div class="success-body-rows">
-                    <p class="success-body-text">لقد تم تفعيل ميزات "الشريك" الخاصة بك بنجاح.</p>
-                    <p class="success-body-text">نحن فخورون بوجودك كجزء من عائلة صيدلية حيا، ونهدف دائماً لتقديم الأفضل لك.</p>
+                    <p class="success-body-text">يمكنك الآن الاستفادة من مزايا وخصومات كارت الشريك في صيدلية حيا.</p>
+                    <p class="success-body-text">استخدم بطاقتك عند زيارتك للصيدلية للحصول على العروض والخدمات الحصرية.</p>
                     <p class="success-body-text">رقم بطاقتك الخاصة بالشركاء هو:</p>
                 </div>
 
@@ -430,7 +430,7 @@ include __DIR__ . '/../includes/header.php';
                 </div>
 
                 <div class="success-footer-note">
-                    تفضل بزيارتنا قريباً للاستفادة من كافة المزايا 💚
+                    نتطلع لخدمتك 💚
                 </div>
             </div>
             
