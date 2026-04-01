@@ -285,76 +285,7 @@ include __DIR__ . '/../includes/header.php';
 
 </div>
 
-<!-- <div id="regModal" class="reg-modal-overlay">
-    <div class="reg-modal-content">
-        <button id="modalClose" class="modal-close-btn" aria-label="Close">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
 
-        <div id="modalFormWrap">
-            <form id="regForm" method="POST" novalidate>
-                <div class="modal-form-group">
-                    <label class="modal-label">الاسم</label>
-                    <input type="text" id="reg_name" name="reg_name" class="modal-input" placeholder="محمد" required>
-                </div>
-
-                <div class="modal-form-group">
-                    <label class="modal-label">تاريخ الميلاد</label>
-                    <input type="date" id="reg_dob" name="reg_dob" class="modal-input" placeholder="07/03/2000" required>
-                </div>
-
-                <div class="modal-form-group">
-                    <label class="modal-label">رقم التليفون</label>
-                    <input type="tel" id="reg_mobile" name="reg_mobile" class="modal-input" placeholder="+20 10xxxxxxxxx" required>
-                </div>
-
-                <div class="modal-form-group">
-                    <label class="modal-label">ذكر/أنثى</label>
-                    <div class="modal-select-wrap">
-                        <select id="reg_gender" name="reg_gender" class="modal-input modal-select" required>
-                            <option value="" disabled selected>اختر الجنس</option>
-                            <option value="male">ذكر</option>
-                            <option value="female">أنثى</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="modal-btn-wrap">
-                    <button type="submit" class="haya-btn-modal-submit">
-                        <i class="fas fa-user-plus"></i>
-                        سجل الآن
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <div id="modalSuccess" class="success-message-wrap">
-            <div class="success-top-content" style="text-align: right; padding-right: 9rem;">
-                <h2 class="success-title">شكرا لك</h2>
-                <div class="success-body-rows">
-                    <p class="success-body-text">تم تسجيلك بنجاح في قائمة الانتظار لبطاقة الأوائل من صيدلية حيا.</p>
-                    <p class="success-body-text">هذه البطاقة تمنح حامليها مزايا حصرية وعروض خاصة .</p>
-                    <p class="success-body-text">سنقوم بالتواصل معك قريباً لإعلامك عند توفر البطاقة.</p>
-                </div>
-                <div class="success-footer-note">
-                    شكراً لاهتمامك، ونتطلع لخدمتك قريباً 💚
-                </div>
-            </div>
-
-            <div class="success-logos-row">
-                <div class="success-logo-item">
-                    <span>صيدلية حيا</span>
-                </div>
-                <div class="success-logo-item">
-                    <span class="partner-text">شريكك لحياة صحية</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <!-- ── Registration Modal ────────────────────────────────────────── -->
 <div class="pt-modal-overlay" id="regModal">

@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // ── Collect and validate inputs ───────────────────────────────
-$name   = clean($_POST['reg_name']   ?? '');
-$mobile = clean($_POST['reg_mobile'] ?? '');
-$dob    = clean($_POST['reg_dob']    ?? '');
-$gender = clean($_POST['reg_gender'] ?? '');
+$name   = clean($_POST['name']   ?? '');
+$mobile = clean($_POST['mobile'] ?? '');
+$dob    = clean($_POST['dob']    ?? '');
+$gender = clean($_POST['gender'] ?? '');
 
 // Normalize Arabic numbers to English
 $arabicNum = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
