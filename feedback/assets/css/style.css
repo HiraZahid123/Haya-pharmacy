@@ -155,25 +155,28 @@ body {
 
 /* Top Header text and Container */
 .header-container {
-  width: 90%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the title */
   align-items: center;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 15px;
   z-index: 5;
   position: relative;
 }
 
 .desktop-header-logo {
-  width: 31%; /* Increased from 130px */
+  width: 13%; /* Reduced from 31% to fit corner better */
   height: auto;
   object-fit: contain;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 .desktop-spacer {
-  width: 130px;
+  display: none;
 }
 
 .header-title {
@@ -181,7 +184,7 @@ body {
   /* Haya/Sand */
   font-family: "Tajawal", sans-serif;
   font-weight: 700;
-  font-size: 38px;
+  font-size: 58px; /* Increased from 38px */
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
@@ -339,6 +342,7 @@ body {
   .desktop-header-logo {
     width: 31%;
     order: -1; 
+    position: static; /* Overriding absolute for mobile */
   }
   .desktop-spacer {
     display: none;
@@ -556,6 +560,8 @@ body.comments-step-active .mobile-header-logo {
 
   .desktop-header-logo {
     width: 31%; /* Increased for mobile from 110px */
+    position: static; /* Overriding absolute for mobile */
+    margin-bottom: 10px;
   }
 
   .header-title {

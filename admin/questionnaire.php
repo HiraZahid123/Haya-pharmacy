@@ -10,40 +10,43 @@ $riskFilter   = $_GET['risk_type'] ?? ''; // 'dia', 'hyp', 'thy'
 $dateFrom     = $_GET['date_from'] ?? '';
 $dateTo       = $_GET['date_to'] ?? '';
 
-$query = "SELECT * FROM questionnaire_submissions WHERE 1=1";
+$query = "SELECT * FROM standalone_survey_results WHERE 1=1";
 $params = [];
 
 if ($genderFilter) {
-    $query .= " AND gender = ?";
-    $params[] = $genderFilter;
+    if ($genderFilter == 'male') {
+        $query .= " AND gender = 'male'";
+    } else {
+        $query .= " AND gender = 'female'";
+    }
 }
 if ($riskFilter === 'dia') {
-    $query .= " AND diabetes_risk_level IN ('high', 'very_high')";
+    $query .= " AND diabetes_risk IN ('خطر مرتفع', 'خطر مرتفع جداً')";
 } elseif ($riskFilter === 'hyp') {
-    $query .= " AND hypertension_risk_level = 'high'";
+    $query .= " AND bp_risk IN ('خطر مرتفع', 'خطر مرتفع جداً')";
 } elseif ($riskFilter === 'thy') {
-    $query .= " AND thyroid_risk_level = 'high'";
+    $query .= " AND thyroid_risk IN ('خطر مرتفع', 'خطر متوسط')";
 }
 
 if ($dateFrom) {
-    $query .= " AND DATE(submitted_at) >= ?";
+    $query .= " AND DATE(created_at) >= ?";
     $params[] = $dateFrom;
 }
 if ($dateTo) {
-    $query .= " AND DATE(submitted_at) <= ?";
+    $query .= " AND DATE(created_at) <= ?";
     $params[] = $dateTo;
 }
 
-$query .= " ORDER BY submitted_at DESC";
+$query .= " ORDER BY created_at DESC";
 $stmt = $db->prepare($query);
 $stmt->execute($params);
 $submissions = $stmt->fetchAll();
 
 // Statistics
-$total      = (int)$db->query("SELECT COUNT(*) FROM questionnaire_submissions")->fetchColumn();
-$highRiskD  = (int)$db->query("SELECT COUNT(*) FROM questionnaire_submissions WHERE diabetes_risk_level IN ('high', 'very_high')")->fetchColumn();
-$highRiskH  = (int)$db->query("SELECT COUNT(*) FROM questionnaire_submissions WHERE hypertension_risk_level = 'high'")->fetchColumn();
-$highRiskT  = (int)$db->query("SELECT COUNT(*) FROM questionnaire_submissions WHERE thyroid_risk_level = 'high'")->fetchColumn();
+$total      = (int)$db->query("SELECT COUNT(*) FROM standalone_survey_results")->fetchColumn();
+$highRiskD  = (int)$db->query("SELECT COUNT(*) FROM standalone_survey_results WHERE diabetes_risk IN ('خطر مرتفع', 'خطر مرتفع جداً')")->fetchColumn();
+$highRiskH  = (int)$db->query("SELECT COUNT(*) FROM standalone_survey_results WHERE bp_risk IN ('خطر مرتفع', 'خطر مرتفع جداً')")->fetchColumn();
+$highRiskT  = (int)$db->query("SELECT COUNT(*) FROM standalone_survey_results WHERE thyroid_risk IN ('خطر مرتفع', 'خطر مرتفع جداً')")->fetchColumn();
 
 function translateRiskLabel($l) {
     $map = [
@@ -114,30 +117,30 @@ function translateRiskLabel($l) {
                         <tr>
                             <td style="color: #005445; font-weight: 700;"><?= $row['gender'] == 'male' ? 'ذكر' : 'أنثى' ?></td>
                             <td>
-                                <span class="risk-badge <?= $row['vitamin_risk_level'] ?>">
-                                    <?= translateRiskLabel($row['vitamin_risk_level']) ?>
+                                <span class="risk-badge">
+                                    <?= htmlspecialchars($row['vitamin_risk']) ?>
                                 </span>
                             </td>
                             <td>
-                                <?php if ($row['thyroid_risk_level']): ?>
-                                    <span class="risk-badge <?= $row['thyroid_risk_level'] ?>">
-                                        <?= translateRiskLabel($row['thyroid_risk_level']) ?>
+                                <?php if ($row['thyroid_risk']): ?>
+                                    <span class="risk-badge">
+                                        <?= htmlspecialchars($row['thyroid_risk']) ?>
                                     </span>
                                 <?php else: ?>
                                     <span style="opacity:0.4">—</span>
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <span class="risk-badge <?= $row['diabetes_risk_level'] ?>">
-                                    <?= translateRiskLabel($row['diabetes_risk_level']) ?>
+                                <span class="risk-badge">
+                                    <?= htmlspecialchars($row['diabetes_risk']) ?>
                                 </span>
                             </td>
                             <td>
-                                <span class="risk-badge <?= $row['hypertension_risk_level'] ?>">
-                                    <?= translateRiskLabel($row['hypertension_risk_level']) ?>
+                                <span class="risk-badge">
+                                    <?= htmlspecialchars($row['bp_risk']) ?>
                                 </span>
                             </td>
-                            <td dir="ltr" style="font-size: 0.9rem; color: #666;"><?= iraqTime($row['submitted_at']) ?></td>
+                            <td dir="ltr" style="font-size: 0.9rem; color: #666;"><?= date('Y-m-d H:i', strtotime($row['created_at'])) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>

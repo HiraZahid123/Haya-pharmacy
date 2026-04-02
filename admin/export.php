@@ -74,24 +74,14 @@ if ($type === 'pioneers' || $type === 'partners') {
 
     fputcsv($output, ['الجنس', 'الفيتامينات', 'الغدة الدرقية', 'السكري', 'ضغط الدم', 'تاريخ الإرسال']);
 
-    $query = "SELECT gender, vitamin_risk_level, thyroid_risk_level, diabetes_risk_level, hypertension_risk_level, submitted_at FROM questionnaire_submissions ORDER BY submitted_at DESC";
+    $query = "SELECT gender, vitamin_risk, thyroid_risk, diabetes_risk, bp_risk, created_at FROM standalone_survey_results ORDER BY created_at DESC";
     $stmt = $db->query($query);
-
-    $map = [
-        'low' => 'منخفض',
-        'moderate' => 'متوسط',
-        'high' => 'مرتفع',
-        'very_high' => 'مرتفع جداً',
-        'slightly_elevated' => 'مرتفع قليلاً'
-    ];
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $row['gender'] = ($row['gender'] === 'male') ? 'ذكر' : 'أنثى';
-        $row['vitamin_risk_level'] = $map[$row['vitamin_risk_level']] ?? $row['vitamin_risk_level'];
-        $row['thyroid_risk_level'] = $map[$row['thyroid_risk_level']] ?? ($row['thyroid_risk_level'] ?: '—');
-        $row['diabetes_risk_level'] = $map[$row['diabetes_risk_level']] ?? $row['diabetes_risk_level'];
-        $row['hypertension_risk_level'] = $map[$row['hypertension_risk_level']] ?? $row['hypertension_risk_level'];
-        $row['submitted_at'] = iraqTime($row['submitted_at']);
+        // Values are already saved in Arabic in the new standalone_survey_results table
+        $row['thyroid_risk'] = $row['thyroid_risk'] ?: '—';
+        $row['created_at'] = date('Y-m-d H:i', strtotime($row['created_at']));
         
         fputcsv($output, array_values($row));
     }

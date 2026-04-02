@@ -86,9 +86,8 @@ $activePage = basename($_SERVER['PHP_SELF']);
     <header class="admin-nav">
         <nav class="admin-nav-links">
             <a href="pioneers.php" class="<?= $activePage == 'pioneers.php' ? 'active' : '' ?>">الأوائل</a>
-             <a href="partners.php" class="<?= $activePage == 'partners.php' ? 'active' : '' ?>">الشركاء</a>
-            <!--<a href="feedback.php" class="<?= $activePage == 'feedback.php' ? 'active' : '' ?>">التقييمات</a>
-            <a href="questionnaire.php" class="<?= $activePage == 'questionnaire.php' ? 'active' : '' ?>">الفحص الصحي</a> -->
+            <a href="partners.php" class="<?= $activePage == 'partners.php' ? 'active' : '' ?>">الشركاء</a>
+            <a href="questionnaire.php" class="<?= $activePage == 'questionnaire.php' ? 'active' : '' ?>">الفحص الصحي</a>
         </nav>
 
         <div class="admin-nav-logo-wrap">

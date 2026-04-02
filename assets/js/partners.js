@@ -149,7 +149,6 @@
         var mobile = document.querySelector('[name="mobile"]');
         var gender = document.querySelector('[name="gender"]');
         var dob = document.querySelector('[name="dob"]');
-        var secret = document.querySelector('[name="secret_id"]');
 
         if (!name || !name.value.trim() || name.value.trim().length < 3) {
             showError('err_name', 'الاسم الكامل مطلوب (3 أحرف على الأقل)');
@@ -165,10 +164,6 @@
         }
         if (!dob || !dob.value) {
             showError('err_dob', 'يرجى اختيار تاريخ الميلاد');
-            valid = false;
-        }
-        if (!secret || !secret.value.trim()) {
-            showError('err_id', 'يرجى إدخال الرقم السري');
             valid = false;
         }
         return valid;

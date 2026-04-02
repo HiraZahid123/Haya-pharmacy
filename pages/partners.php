@@ -327,12 +327,6 @@ include __DIR__ . '/../includes/header.php';
                     <span class="form-error" id="err_gender"></span>
                 </div>
 
-                <div class="pt-form-group">
-                    <label for="reg_id">رقم سري</label>
-                    <input type="text" id="reg_id" name="secret_id" placeholder="372662897449" required class="pt-form-control">
-                    <span class="form-error" id="err_id"></span>
-                </div>
-
                 <div id="globalError" class="global-error"></div>
 
                 <button type="submit" class="pt-btn-submit">
