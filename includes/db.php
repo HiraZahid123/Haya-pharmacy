@@ -15,6 +15,8 @@ function getDB(): PDO {
         ];
         try {
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+            // Sync MySQL timezone with PHP timezone
+            $pdo->exec("SET time_zone = '" . date('P') . "'");
         } catch (PDOException $e) {
             http_response_code(500);
             die(json_encode(['success' => false, 'message' => 'Database connection failed.']));
