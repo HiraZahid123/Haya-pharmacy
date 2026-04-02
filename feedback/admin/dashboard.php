@@ -76,7 +76,7 @@ $branches = $pdo->query("SELECT id, branch_name FROM branches ORDER BY branch_na
     <link rel="icon" type="image/png" href="../assets/images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/admin-style.css?v=2.4">
+    <link rel="stylesheet" href="../assets/css/admin-style.css?v=2.5">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
