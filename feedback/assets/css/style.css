@@ -437,9 +437,10 @@ input.form-control:focus {
   margin-bottom: 0;
 }
 
-/* Hide header title, container, and progress dots on comments page */
+/* Hide header title, container, progress dots, and corner logo on comments page */
 body.comments-step-active .header-title,
 body.comments-step-active .header-container,
+body.comments-step-active .desktop-header-logo,
 .comments-step-active .progress-container,
 body.comments-step-active .mobile-header-logo {
   display: none !important;
