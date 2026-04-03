@@ -55,16 +55,33 @@ if (!empty($errors)) {
     jsonResponse(false, implode(' | ', $errors));
 }
 
-// ── Check for duplicate phone number ─────────────────────────
-$db   = getDB();
-$stmt = $db->prepare('SELECT id FROM partners_cards WHERE mobile_number = ?');
-$stmt->execute([$mobile]);
-if ($stmt->fetch()) {
-    jsonResponse(false, 'رقم الهاتف هذا مسجل بالفعل في برنامج الشركاء');
-}
-
-// ── Generate card number & insert ────────────────────────────
+// ── Check for duplicate phone number and insert ─────────────────────────
 try {
+    $db   = getDB();
+    
+    // Auto-create table if missing (hotfix)
+    $db->exec("
+        CREATE TABLE IF NOT EXISTS `partners_cards` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `card_number` varchar(50) NOT NULL,
+            `full_name` varchar(255) NOT NULL,
+            `mobile_number` varchar(20) NOT NULL,
+            `gender` varchar(20) DEFAULT NULL,
+            `date_of_birth` date DEFAULT NULL,
+            `passcode` varchar(50) DEFAULT NULL,
+            `created_at` datetime NOT NULL,
+            PRIMARY KEY (`id`),
+            UNIQUE KEY (`card_number`),
+            UNIQUE KEY (`mobile_number`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ");
+
+    $stmt = $db->prepare('SELECT id FROM partners_cards WHERE mobile_number = ?');
+    $stmt->execute([$mobile]);
+    if ($stmt->fetch()) {
+        jsonResponse(false, 'رقم الهاتف هذا مسجل بالفعل في برنامج الشركاء');
+    }
+
     $cardNumber = generateCardNumber(PARTNER_PREFIX, 'partners_cards');
 
     $insert = $db->prepare(
@@ -77,6 +94,6 @@ try {
         'card_number' => $cardNumber,
         'name'        => $name,
     ]);
-} catch (PDOException $e) {
-    jsonResponse(false, 'حدث خطأ أثناء التسجيل: ' . $e->getMessage());
+} catch (Throwable $e) {
+    jsonResponse(false, 'حدث خطأ: ' . $e->getMessage());
 }
