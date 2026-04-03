@@ -74,7 +74,7 @@
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
 
-      width: min(1100px, calc(100vw - 360px));
+      width: min(1400px, calc(100vw - 200px));
       height: calc(100vh - 80px);
       max-height: 780px;
 
@@ -118,24 +118,36 @@
     }
 
     .opt-btn {
-      display: block;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
       width: 100%;
-      padding: 5px 0;
+      padding: 8px 0;
       font-family: 'MadaniArabic', sans-serif;
       font-size: 19px;
       font-weight: 600;
       cursor: pointer;
-      background-color: transparent;
-      color: #015645; /* Always green as requested */
+      background: none;
+      color: #015645;
       border: none;
       text-align: right;
-      transition: opacity 0.2s ease;
+      transition: all 0.2s;
       outline: none;
     }
 
+    .opt-btn::before {
+      content: "•";
+      color: #015645;
+      font-size: 24px;
+      line-height: 1;
+      margin-top: -2px;
+    }
+
     .opt-btn.on {
-      color: #015645; /* Match question color even when on */
-      opacity: 0.8;    /* Slight visual cue */
+      color: #BB9960;
+    }
+    .opt-btn.on::before {
+      color: #BB9960;
     }
 
     .age-num {
@@ -281,19 +293,18 @@
 
       <!-- Navigation -->
       <div class="nav-row">
-        <button type="submit" class="nav-btn next-btn" id="btn-next">
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.5 3L5 7.5L9.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          السؤال التالي
-        </button>
-
         <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
-          السؤال السابق
           <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.5 3L10 7.5L5.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+          السؤال السابق
         </a>
+        <button type="submit" class="nav-btn next-btn" id="btn-next">
+          السؤال التالي
+          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.5 3L5 7.5L9.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
 
       <!-- Progress -->

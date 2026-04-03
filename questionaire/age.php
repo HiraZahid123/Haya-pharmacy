@@ -64,7 +64,7 @@
       background-color: #F6EDEA;
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
-      width: min(1000px, calc(100vw - 360px));
+      width: min(1400px, calc(100vw - 200px));
       height: calc(100vh - 60px);
       max-height: 820px;
       display: flex;
@@ -74,7 +74,7 @@
     .banner-box {
       position: relative;
       margin: 18px 18px 0;
-      height: 220px;
+      height: 300px;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -143,7 +143,7 @@
       font-weight: 700;
       text-align: right;
       width: 100%;
-      margin-bottom: 65px;
+      margin-bottom: 30px;
     }
 
     .options-grid {
@@ -168,7 +168,7 @@
       font-size: 17px;
       font-weight: 600;
       cursor: pointer;
-      background-color: #fff;
+      background-color: transparent;
       color: #015645;
       border: 1.5px solid #015645;
       transition: all 0.2s;
@@ -316,14 +316,14 @@
             <div class="spacer"></div>
 
             <div class="nav-row">
-              <button type="submit" class="nav-btn next-btn">
-                السؤال التالي
-                <svg viewBox="0 0 24 24" fill="none" style="margin-right: 8px;"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
               <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn">
                 <svg viewBox="0 0 24 24" fill="none" style="margin-left: 8px;"><path d="M9 18l6-6-6-6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 السابق
               </a>
+              <button type="submit" class="nav-btn next-btn">
+                السؤال التالي
+                <svg viewBox="0 0 24 24" fill="none" style="margin-right: 8px;"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
 
             <div class="progress-wrap">

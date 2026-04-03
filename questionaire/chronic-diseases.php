@@ -74,7 +74,7 @@
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
 
-      width: min(1100px, calc(100vw - 360px));
+      width: min(1400px, calc(100vw - 200px));
       height: calc(100vh - 80px);
       max-height: 780px;
 
@@ -92,7 +92,7 @@
       text-align: right;
       width: 100%;
       line-height: 1.7;
-      margin-bottom: 70px;
+      margin-bottom: 100px;
     }
 
     /* ══════════════════════════════
@@ -121,7 +121,7 @@
       cursor: pointer;
       outline: none;
       transition: all 0.15s ease;
-      background-color: #ffffff;
+      background-color: transparent;
       color: #015645;
       border: 1.5px solid #015645;
       width: 100%;
@@ -301,19 +301,18 @@
 
       <!-- Navigation Buttons -->
       <div class="nav-row">
-        <button type="submit" class="nav-btn next-btn" id="btn-next">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          السؤال التالي
-        </button>
-
         <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn">
           السابق
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 18L15 12L9 6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        <button type="submit" class="nav-btn next-btn" id="btn-next">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          السؤال التالي
+        </button>
       </div>
 
       <!-- Progress Indicator -->

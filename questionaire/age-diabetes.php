@@ -74,7 +74,7 @@
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
 
-      width: min(1100px, calc(100vw - 360px));
+      width: min(1400px, calc(100vw - 200px));
       height: calc(100vh - 80px);
       max-height: 780px;
 
@@ -103,27 +103,29 @@
       text-align: right;
       width: 100%;
       line-height: 1.7;
-      margin-bottom: 50px;
+      margin-bottom: 40px; 
     }
 
     /* ══════════════════════════════
-       OPTIONS GRID
+       OPTIONS LIST
     ══════════════════════════════ */
-    .options-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 20px;
-      row-gap: 15px;
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
       width: 100%;
-      align-items: start;
+      align-items: flex-start;
     }
 
     .opt-btn {
-      display: block;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
       width: 100%;
       padding: 5px 0;
       font-family: 'MadaniArabic', sans-serif;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 600;
       cursor: pointer;
       background-color: transparent;
@@ -131,12 +133,25 @@
       border: none;
       text-align: right;
       transition: opacity 0.2s ease;
+      line-height: 1.5;
       outline: none;
+    }
+
+    .opt-btn::before {
+      content: "•";
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 24px;
+      color: #015645;
+      line-height: 1;
+      margin-top: -2px;
     }
 
     .opt-btn.on {
       color: #BB9960;
-      text-decoration: underline;
+    }
+    .opt-btn.on::before {
+      color: #BB9960;
     }
 
     .age-num {
@@ -188,7 +203,7 @@
       color: #fff;
     }
 
-    .nav-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .nav-btn svg { width: 16px; height: 16px; stroke-width: 2.2; flex-shrink: 0; }
 
     /* ══════════════════════════════
        PROGRESS BARS
@@ -198,6 +213,7 @@
       flex-direction: column;
       align-items: center;
       gap: 7px;
+      margin-bottom: 40px;
     }
     .bars {
       display: flex;
@@ -231,7 +247,6 @@
         border-radius: 12px;
         height: calc(100vh - 40px);
       }
-      .options-grid { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -261,20 +276,20 @@
       <!-- Question -->
       <p class="question">العمر</p>
 
-      <!-- Options Grid -->
-      <div class="options-grid">
+      <!-- Options List -->
+      <div class="options-list">
         <?php 
         $options = [
-          'أقل من 45 سنة',
-          '45-54 سنة',
-          '55-64 سنة',
-          'أكثر من 64 سنة'
+          'أقل من 45 سنة' => 'أقل من <span class="age-num" dir="ltr">45</span> سنة',
+          '45-54 سنة' => '&rlm;<span class="age-num" dir="ltr">45-54</span> سنة',
+          '55-64 سنة' => '&rlm;<span class="age-num" dir="ltr">55-64</span> سنة',
+          'أكثر من 64 سنة' => 'أكثر من <span class="age-num" dir="ltr">64</span> سنة'
         ];
-        foreach ($options as $opt): 
-          $isSelected = (isset($_SESSION['survey_responses']['age-diabetes.php']) && $_SESSION['survey_responses']['age-diabetes.php'] == $opt);
+        foreach ($options as $val => $label): 
+          $isSelected = (isset($_SESSION['survey_responses']['age-diabetes.php']) && $_SESSION['survey_responses']['age-diabetes.php'] == $val);
         ?>
-          <button type="button" class="opt-btn <?= $isSelected ? 'on' : '' ?>" onclick="pick(this, '<?= $opt ?>')">
-            <?= $opt ?>
+          <button type="button" class="opt-btn <?= $isSelected ? 'on' : '' ?>" onclick="pick(this, '<?= $val ?>')">
+            <?= $label ?>
           </button>
         <?php endforeach; ?>
       </div>
@@ -284,19 +299,18 @@
 
       <!-- Navigation -->
       <div class="nav-row">
+        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
+          السؤال السابق
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
         <button type="submit" class="nav-btn next-btn" id="btn-next">
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.5 3L5 7.5L9.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           السؤال التالي
         </button>
-
-        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
-          السؤال السابق
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.5 3L10 7.5L5.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
 
       <!-- Progress -->

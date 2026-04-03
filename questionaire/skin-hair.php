@@ -84,7 +84,7 @@
       border: 1px solid rgba(187, 153, 96, 0.18);
 
       /* Responsive width — centered between the patterns */
-      width: min(1100px, calc(100vw - 360px));
+      width: min(1400px, calc(100vw - 200px));
       /* Height fits in viewport with some breathing room */
       height: calc(100vh - 80px);
       max-height: 780px;
@@ -114,7 +114,7 @@
       text-align: right;     /* Aligned to right */
       width: 100%;             /* Ensure full width for alignment */
       line-height: 1.7;
-      margin-bottom: 100px; /* Increased to move buttons down */
+      margin-bottom: 80px; 
     }
 
     /* ══════════════════════════════
@@ -154,7 +154,7 @@
       border: 2px solid #015645;
     }
     .tog-btn.off {
-      background-color: #ffffff;
+      background-color: transparent;
       color: #015645;
       border: 2px solid #015645;
     }
@@ -223,11 +223,7 @@
       color: #fff;
     }
 
-    .nav-btn svg {
-      width: 15px;
-      height: 15px;
-      flex-shrink: 0;
-    }
+    .nav-btn svg { width: 16px; height: 16px; stroke-width: 2.2; flex-shrink: 0; }
 
     /* ══════════════════════════════
        PROGRESS BARS
@@ -353,19 +349,18 @@
 
       <!-- Navigation Buttons -->
       <div class="nav-row">
+        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
+          السؤال السابق
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
         <button type="submit" class="nav-btn next-btn" id="btn-next">
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.5 3L5 7.5L9.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           السؤال التالي
         </button>
-
-        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
-          السؤال السابق
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.5 3L10 7.5L5.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
 
       <!-- Progress Indicator -->

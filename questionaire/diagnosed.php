@@ -74,7 +74,7 @@
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
 
-      width: min(1100px, calc(100vw - 360px));
+      width: min(1400px, calc(100vw - 200px));
       height: calc(100vh - 80px);
       max-height: 780px;
 
@@ -84,7 +84,18 @@
       align-items: center;
     }
 
-    /* ── Question ── */
+    /* ── Title ── (Synced with index.php) */
+    .title {
+      color: #BB9960;
+      font-size: clamp(17px, 1.6vw, 24px);
+      font-weight: 700;
+      text-align: right;
+      width: 100%;
+      line-height: 1.5;
+      margin-bottom: 60px;
+    }
+
+    /* ── Question ── (Synced with index.php) */
     .question {
       color: #015645;
       font-size: clamp(15px, 1.35vw, 20px);
@@ -92,7 +103,7 @@
       text-align: right;
       width: 100%;
       line-height: 1.7;
-      margin-bottom: 100px;
+      margin-bottom: 80px; 
     }
 
     /* ══════════════════════════════
@@ -132,7 +143,7 @@
       border: 2px solid #015645;
     }
     .tog-btn.off {
-      background-color: #ffffff;
+      background-color: transparent;
       color: #015645;
       border: 2px solid #015645;
     }
@@ -196,8 +207,9 @@
     }
 
     .nav-btn svg {
-      width: 15px;
-      height: 15px;
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.2;
       flex-shrink: 0;
     }
 
@@ -286,19 +298,18 @@
       <div class="spacer"></div>
 
       <div class="nav-row">
+        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
+          السابق
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
         <button type="submit" class="nav-btn next-btn" id="btn-next">
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.5 3L5 7.5L9.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           السؤال التالي
         </button>
-
-        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
-          السؤال السابق
-          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.5 3L10 7.5L5.5 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
 
       <div class="progress-wrap">
