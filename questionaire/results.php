@@ -234,8 +234,8 @@ if (!empty($responses) && !isset($responses['SAVED_TO_DB'])) {
     }
     
     /* Low Risk Color Helper */
-    .badge.green-bg { background-color: #015645; }
-    .badge.red-bg { background-color: #a83232; }
+    .badge.green-bg { background-color: #BB9960; }
+    .badge.red-bg { background-color: #BB9960; }
 
     .res-desc {
       font-size: 13px;
