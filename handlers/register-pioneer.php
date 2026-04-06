@@ -67,8 +67,7 @@ try {
     $insert->execute([$cardNumber, $name, $mobile, $gender, $dob]);
 
     jsonResponse(true, 'تم التسجيل بنجاح', [
-        'card_number' => $cardNumber,
-        'name'        => $name,
+        'name' => $name,
     ]);
 } catch (PDOException $e) {
     jsonResponse(false, 'حدث خطأ أثناء التسجيل: ' . $e->getMessage());

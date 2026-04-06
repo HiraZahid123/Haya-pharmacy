@@ -91,8 +91,7 @@ try {
     $insert->execute([$cardNumber, $name, $mobile, $gender, $dob]);
 
     jsonResponse(true, 'تم التسجيل بنجاح', [
-        'card_number' => $cardNumber,
-        'name'        => $name,
+        'name' => $name,
     ]);
 } catch (Throwable $e) {
     jsonResponse(false, 'حدث خطأ: ' . $e->getMessage());

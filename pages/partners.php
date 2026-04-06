@@ -344,11 +344,6 @@ include __DIR__ . '/../includes/header.php';
                 <div class="success-body-rows">
                     <p class="success-body-text">يمكنك الآن الاستفادة من مزايا وخصومات كارت الشريك في صيدلية حيا.</p>
                     <p class="success-body-text">استخدم بطاقتك عند زيارتك للصيدلية للحصول على العروض والخدمات الحصرية.</p>
-                    <p class="success-body-text">رقم بطاقتك الخاصة بالشركاء هو:</p>
-                </div>
-
-                <div class="success-card-num-wrap">
-                    <div class="success-card-num" id="successCardNumber"></div>
                 </div>
 
                 <div class="success-footer-note">

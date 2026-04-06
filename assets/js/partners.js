@@ -122,8 +122,6 @@
                         if (json.success) {
                             if (formWrap) formWrap.classList.add('hide');
                             if (successWrap) {
-                                var cardNumEl = document.getElementById('successCardNumber');
-                                if (cardNumEl) cardNumEl.textContent = json.card_number || '';
                                 successWrap.classList.remove('hide');
                                 successWrap.classList.add('show');
                             }
