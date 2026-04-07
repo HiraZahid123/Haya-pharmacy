@@ -5,6 +5,7 @@
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../includes/whatsapp.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -65,6 +66,9 @@ try {
          VALUES (?, ?, ?, ?, ?, NOW())'
     );
     $insert->execute([$cardNumber, $name, $mobile, $gender, $dob]);
+
+    // ── Send WhatsApp welcome message (fire-and-forget) ───────
+    @sendWhatsApp($mobile, buildRegistrationMessage('pioneer'));
 
     jsonResponse(true, 'تم التسجيل بنجاح', [
         'name' => $name,
