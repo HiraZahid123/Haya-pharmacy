@@ -32,9 +32,53 @@
       width: 100%;
       height: 100vh;
       display: flex;
+      flex-direction: column; /* Changed to column to stack header and card */
       align-items: center;
       justify-content: center;
       overflow: hidden;
+    }
+
+    .top-logo-area {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      z-index: 10;
+    }
+
+    .header-logo-mini {
+      height: 45px; /* Reduced size */
+      object-fit: contain;
+    }
+
+    .upper-header {
+      width: 1280px;
+      max-width: calc(100vw - 64px);
+      display: flex;
+      justify-content: flex-start; /* Move contents to the left */
+      align-items: center;
+      margin-bottom: 25px;
+      z-index: 2;
+    }
+
+    /* Remove old header-logo style if not used elsewhere */
+
+    .header-title-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #BB9960;
+    }
+
+    .header-title {
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .header-icon-svg {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
     }
 
     .pat-side {
@@ -63,73 +107,15 @@
       background-color: #F6EDEA;
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
-      width: min(1400px, calc(100vw - 200px));
-      height: calc(100vh - 60px);
-      max-height: 820px;
+      width: min(1280px, calc(100vw - 64px));
+      height: min(815px, calc(100vh - 150px));
       display: flex;
       flex-direction: column;
-    }
-
-    .banner-box {
-      position: relative;
-      margin: 18px 18px 0;
-      height: 300px;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .banner-bg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .banner-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 45px;
-      background: rgba(1, 86, 69, 0.45);
-    }
-
-    /* Column for text and button on the Right side */
-    .banner-info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Aligns items to the Right edge in RTL */
-        gap: 15px;
-        text-align: right;
-    }
-
-    .banner-title {
-        color: #fff;
-        font-size: clamp(20px, 2.2vw, 30px);
-        font-weight: 700;
-        margin: 0;
-    }
-
-    .banner-btn {
-        background-color: #014739;
-        color: #fff;
-        padding: 9px 30px;
-        border-radius: 50px;
-        border: none;
-        font-family: inherit;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .banner-logo {
-        height: 75px;
-        object-fit: contain;
+      padding-top: 20px;
     }
 
     .card-body {
-        padding: 30px 60px 20px;
+        padding: 60px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -137,35 +123,34 @@
     }
 
     .question {
-      color: #015645;
-      font-size: clamp(18px, 1.5vw, 22px);
-      font-weight: 700;
+      color: #000;
+      font-size: clamp(20px, 2vw, 26px);
+      font-weight: 800;
       text-align: right;
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 45px;
     }
 
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 20px;
       width: 100%;
-      max-width: 820px;
+      max-width: 960px;
       margin-bottom: 20px;
     }
 
     .opt-btn {
       display: flex;
-      flex-direction: row;
+      flex-direction: row; /* In RTL, this puts the first element on the right */
       align-items: center;
-      justify-content: flex-start; /* Checkbox on right, Text next to it */
-      gap: 15px;
-      padding: 0 20px;
-      height: 58px;
-      border-radius: 50px;
+      justify-content: space-between; /* Put space between text and checkbox */
+      padding: 0 24px;
+      height: 60px; /* Reduced from 74px */
+      border-radius: 100px;
       font-family: inherit;
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       background-color: transparent;
       color: #015645;
@@ -180,26 +165,29 @@
     }
 
     .opt-label {
-        font-family: 'Verdana', sans-serif;
-        font-weight: 600;
+        font-family: inherit;
+        font-weight: 700;
         text-align: right;
     }
 
     .age-num {
+        font-family: 'Arial', sans-serif;
         unicode-bidi: isolate;
         display: inline-block;
     }
 
     .opt-check {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       border: 1.5px solid #015645;
-      border-radius: 5px;
+      background-color: #fff;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       transition: all 0.2s;
+      margin-left: 0; /* Align to the end of the button */
     }
     .opt-btn.on .opt-check {
       background-color: #fff;
@@ -210,7 +198,7 @@
 
     .nav-row {
       width: 100%;
-      max-width: 820px;
+      max-width: 960px; /* Changed from 820px to match options-grid */
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -233,25 +221,36 @@
       text-decoration: none;
     }
 
-    .next-btn { background-color: #015645; color: #fff; border: none; }
-    .prev-btn { background-color: transparent; color: #015645; border: 1.5px solid #015645; }
+    .next-btn { 
+        background-color: #BB9960; 
+        color: #fff; 
+        border: none;
+        width: 200px;
+        height: 56px;
+    }
+    .prev-btn { 
+        background-color: #F6EDEA; 
+        color: #BB9960; 
+        border: 1.5px solid rgba(187, 153, 96, 0.4); 
+        width: 200px;
+        height: 56px;
+    }
 
-    .next-btn:hover, .prev-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .next-btn:hover { background-color: #a38552; transform: translateY(-1px); }
+    .prev-btn:hover { background-color: #fff; transform: translateY(-1px); }
 
     .nav-btn svg { width: 18px; height: 18px; }
 
-    .progress-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .bars { display: flex; flex-direction: row; gap: 7px; }
-    .bar { width: 50px; height: 6px; border-radius: 4px; }
-    .bar.on  { background-color: #015645; }
-    .bar.off { background-color: #E2D9D2; }
-    .prog-label { font-size: 12px; color: #B0A299; font-family: inherit; }
+    .progress-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 10px; }
+    .bars { display: flex; flex-direction: row; gap: 8px; }
+    .bar { width: 64px; height: 8px; border-radius: 12px; }
+    .bar.on  { background-color: #BB9960; }
+    .bar.off { background-color: #E6DCD5; }
+    .prog-label { font-size: 14px; color: #B0A299; font-family: inherit; font-weight: 500; }
 
     @media (max-width: 900px) {
       .card { width: calc(100vw - 120px); }
       .options-grid { grid-template-columns: 1fr; }
-      .banner-box { height: 160px; }
-      .banner-logo { height: 50px; }
     }
   </style>
 
@@ -259,24 +258,26 @@
 </head>
 <body>
 <div class="page">
-  <div class="pat-side left" aria-hidden="true">
-    <img src="../assets/images/ch1.png" class="pat-img" alt="" />
+    <div class="pat-side left" aria-hidden="true">
+    <img src="../assets/images/p-left.svg" class="pat-img" alt="" />
   </div>
   <div class="pat-side right" aria-hidden="true">
-    <img src="../assets/images/ch2.png" class="pat-img" alt="" />
+    <img src="../assets/images/p-right.svg" class="pat-img" alt="" />
+  </div>
+
+  <div class="top-logo-area">
+    <img src="../assets/images/haya-logo.png" class="header-logo-mini" alt="Haya Pharmacy" />
+  </div>
+
+  <div class="upper-header">
+    <div class="header-title-box">
+      <img src="../assets/images/question.svg" class="header-icon-svg" alt="" />
+      <h1 class="header-title">أسئلة عامة</h1>
+    </div>
   </div>
 
   <div class="card">
-    <div class="banner-box">
-        <img src="../assets/images/q-img.svg" class="banner-bg" alt="" />
-        <div class="banner-overlay">
-            <div class="banner-info">
-                <h3 class="banner-title">استبيان الفحص الصحي الذكي</h3>
-                <button class="banner-btn">ابدأ الآن</button>
-            </div>
-            <img src="../assets/images/haya-logo-wide-white.png" class="banner-logo" alt="Haya Pharmacy" />
-        </div>
-    </div>
+
 
     <div class="card-body">
         <form id="surveyForm" method="POST" style="width: 100%; display: flex; flex-direction: column; align-items: center; flex: 1;">
@@ -285,41 +286,42 @@
             <h2 class="question">شكد عمرك؟</h2>
 
             <div class="options-grid">
-              <!-- أطهر من 18 -->
+              <!-- أقل من 18 -->
               <button type="button" class="opt-btn <?= (isset($_SESSION['survey_responses']['age.php']) && $_SESSION['survey_responses']['age.php'] == 'under-18') ? 'on' : '' ?>" onclick="selectAge(this, 'under-18')" id="opt-under-18">
                 <span class="opt-check"></span>
-                <span class="opt-label">أقل من 18</span>
+                <span class="opt-label">أقل من <span class="age-num" dir="ltr">18</span></span>
               </button>
               
               <!-- 18-30 -->
               <button type="button" class="opt-btn <?= (isset($_SESSION['survey_responses']['age.php']) && $_SESSION['survey_responses']['age.php'] == '18-30') ? 'on' : '' ?>" onclick="selectAge(this, '18-30')" id="opt-18-30">
                 <span class="opt-check"></span>
-                <span class="opt-label"><span class="age-num">18-30</span></span>
+                <span class="opt-label"><span class="age-num" dir="ltr">18-30</span></span>
               </button>
               
               <!-- 31-45 -->
               <button type="button" class="opt-btn <?= (isset($_SESSION['survey_responses']['age.php']) && $_SESSION['survey_responses']['age.php'] == '31-45') ? 'on' : '' ?>" onclick="selectAge(this, '31-45')" id="opt-31-45">
                 <span class="opt-check"></span>
-                <span class="opt-label"><span class="age-num">31-45</span></span>
+                <span class="opt-label"><span class="age-num" dir="ltr">31-45</span></span>
               </button>
               
               <!-- 46 وفوق -->
               <button type="button" class="opt-btn <?= (isset($_SESSION['survey_responses']['age.php']) && $_SESSION['survey_responses']['age.php'] == '46-plus') ? 'on' : '' ?>" onclick="selectAge(this, '46-plus')" id="opt-46-plus">
                 <span class="opt-check"></span>
-                <span class="opt-label">46 وفوق</span>
+                <span class="opt-label"><span class="age-num" dir="ltr">46</span> وفوق</span>
               </button>
             </div>
 
             <div class="spacer"></div>
 
             <div class="nav-row">
-              <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn">
-                <svg viewBox="0 0 24 24" fill="none" style="margin-left: 8px;"><path d="M9 18l6-6-6-6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                السابق
+              <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" style="flex-direction: row-reverse;">
+                <span style="font-size: 18px;">السابق</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#BB9960" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
-              <button type="submit" class="nav-btn next-btn">
-                السؤال التالي
-                <svg viewBox="0 0 24 24" fill="none" style="margin-right: 8px;"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+              <button type="submit" class="nav-btn next-btn" style="flex-direction: row-reverse;">
+                <span style="font-size: 18px;">التالي</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
             </div>
 

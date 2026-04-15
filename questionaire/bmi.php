@@ -43,7 +43,7 @@
     /* ══════════════════════════════
        PRECISE SIDE PATTERNS
     ══════════════════════════════ */
-    .pat-side {
+        .pat-side {
       position: fixed;
       top: -44px;
       width: 288px;
@@ -140,7 +140,7 @@
       color: #015645;
       font-size: 24px;
       line-height: 1;
-      margin-top: -2px;
+      margin-top: 0;
     }
 
     .opt-btn.on {
@@ -240,7 +240,7 @@
         width: calc(100vw - 32px);
         padding: 24px 20px 22px;
         border-radius: 12px;
-        height: calc(100vh - 40px);
+        height: calc(100vh - 80px);
       }
     }
   </style>
@@ -251,7 +251,7 @@
 <div class="page">
 
   <!-- Background Patterns -->
-  <div class="pat-side left" aria-hidden="true">
+      <div class="pat-side left" aria-hidden="true">
     <img src="../assets/images/haya pattern  4.svg" class="pat-layer p-l1" alt="" />
     <img src="../assets/images/haya pattern 3.svg" class="pat-layer p-l2" alt="" />
   </div>
@@ -331,3 +331,4 @@
 </script>
 </body>
 </html>
+

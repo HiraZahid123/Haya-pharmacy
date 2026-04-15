@@ -64,6 +64,9 @@ define('PARTNER_PREFIX', 'HAY-S'); // شريك
 // Admin session key
 define('ADMIN_SESSION_KEY', 'haya_admin_logged_in');
 
+// WhatsApp default country code (Iraq = 964)
+define('WHATSAPP_DEFAULT_CODE', getenv('WHATSAPP_DEFAULT_CODE') ?: '964');
+
 // Environment
 define('ENVIRONMENT', getenv('ENVIRONMENT') ?: 'development');
 

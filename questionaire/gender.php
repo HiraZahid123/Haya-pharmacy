@@ -33,64 +33,106 @@
       width: 100%;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      padding: 24px 0 20px;
+    }
+
+    .top-logo-area {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      z-index: 10;
+    }
+
+    .header-logo-mini {
+      height: 45px; /* Reduced size */
+      object-fit: contain;
+    }
+
+    .upper-header {
+      width: 1280px;
+      max-width: calc(100vw - 64px);
+      display: flex;
+      justify-content: flex-start; /* Move contents to the left */
+      align-items: center;
+      margin-bottom: 25px;
+      z-index: 2;
+    }
+
+    .header-title-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #BB9960;
+    }
+
+    .header-title {
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .header-icon-svg {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
     }
 
     /* ══════════════════════════════
        PRECISE SIDE PATTERNS (Figma Specs)
     ══════════════════════════════ */
+    
+
+    /* ══════════════════════════════
+       MAIN SURVEY CARD
+    ══════════════════════════════ */
     .pat-side {
       position: fixed;
-      top: -44px;
+      top: 0;
       width: 288px;
       height: 100vh;
       pointer-events: none;
       z-index: 0;
     }
     .pat-side.left  { left: 0; }
-    .pat-side.right { right: 0; transform: scaleX(-1); }
+    .pat-side.right { right: 0; }
 
-    .pat-layer {
+    .pat-img {
       position: absolute;
       top: 0;
       left: 0;
-      width: 288px;
-      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .p-l1 { height: 940.5px; transform: rotate(-180deg); opacity: 1; }
-    .p-l2 { height: 459.7px; opacity: 0.5; }
 
-    /* ══════════════════════════════
-       MAIN SURVEY CARD
-    ══════════════════════════════ */
     .card {
       position: relative;
       z-index: 1;
       background-color: #F6EDEA;
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
-
-      width: min(1400px, calc(100vw - 200px));
-      height: calc(100vh - 80px);
-      max-height: 780px;
-
-      padding: 40px 60px 36px;
+      width: min(1280px, calc(100vw - 64px));
+      flex: 1;
+      min-height: 0;
+      max-height: min(780px, calc(100vh - 140px));
       display: flex;
       flex-direction: column;
-      align-items: center;
+      padding: 32px 60px 28px;
     }
 
     /* ── Question ── */
     .question {
-      color: #015645;
-      font-size: clamp(18px, 1.5vw, 22px);
-      font-weight: 700;
+      color: #000;
+      font-size: clamp(20px, 2vw, 26px);
+      font-weight: 800;
       text-align: right;
       width: 100%;
-      line-height: 1.7;
-      margin-bottom: 120px;
+      margin-bottom: 45px;
+      padding-right: 40px; /* Added padding to keep it inside the card */
     }
 
     /* ══════════════════════════════
@@ -101,27 +143,27 @@
       grid-template-columns: 1fr 1fr;
       gap: 20px;
       width: 100%;
-      max-width: 800px;
-      margin-bottom: 120px;
+      max-width: 960px;
+      margin-top: 60px; /* Added margin to center vertically */
+      margin-bottom: 20px;
     }
 
     .opt-btn {
       display: flex;
-      flex-direction: row; 
+      flex-direction: row; /* In RTL, this puts the first element on the right */
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between; /* Put space between text and checkbox */
       padding: 0 24px;
-      height: 64px;
-      border-radius: 50px;
-      font-family: 'MadaniArabic', sans-serif;
+      height: 60px;
+      border-radius: 100px;
+      font-family: inherit;
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      outline: none;
-      transition: all 0.15s ease;
       background-color: transparent;
       color: #015645;
       border: 1.5px solid #015645;
+      transition: all 0.2s;
       width: 100%;
     }
 
@@ -133,24 +175,27 @@
     }
 
     .opt-label {
-        margin-right: 12px;
+        font-family: inherit;
+        font-weight: 700;
         text-align: right;
     }
 
     .opt-check {
-      width: 22px;
-      height: 22px;
+      width: 32px;
+      height: 32px;
       border: 1.5px solid #015645;
-      border-radius: 4px;
+      background-color: #fff;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.15s ease;
       flex-shrink: 0;
+      transition: all 0.2s;
+      margin-left: 0;
     }
     .opt-btn.on .opt-check {
+      background-color: #fff;
       border-color: #fff;
-      background-color: transparent;
     }
 
     /* ── Flex spacer pushes bottom down ── */
@@ -161,7 +206,7 @@
     ══════════════════════════════ */
     .nav-row {
       width: 100%;
-      max-width: 800px;
+      max-width: 960px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -185,18 +230,23 @@
       text-decoration: none;
     }
 
-    .next-btn {
-      background-color: #015645;
-      color: #fff;
-      border: none;
+    .next-btn { 
+        background-color: #BB9960; 
+        color: #fff; 
+        border: none;
+        width: 200px;
+        height: 56px;
     }
-    .prev-btn {
-      background-color: transparent;
-      color: #015645;
-      border: 1.5px solid #015645;
+    .prev-btn { 
+        background-color: #F6EDEA; 
+        color: #BB9960; 
+        border: 1.5px solid rgba(187, 153, 96, 0.4); 
+        width: 200px;
+        height: 56px;
     }
 
-    .nav-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .next-btn:hover { background-color: #a38552; transform: translateY(-1px); }
+    .prev-btn:hover { background-color: #fff; transform: translateY(-1px); }
 
     .nav-btn svg {
       width: 16px;
@@ -207,31 +257,12 @@
     /* ══════════════════════════════
        PROGRESS BARS
     ══════════════════════════════ */
-    .progress-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
-    }
-    .bars {
-      display: flex;
-      flex-direction: row;
-      gap: 6px;
-      align-items: center;
-    }
-    .bar {
-      width: 50px;
-      height: 5px;
-      border-radius: 3px;
-    }
-    .bar.on  { background-color: #015645; }
-    .bar.off { background-color: #E0D6CD; }
-
-    .prog-label {
-      font-size: 12px;
-      font-weight: 400;
-      color: #9E948E;
-    }
+    .progress-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 12px; }
+    .bars { display: flex; flex-direction: row; gap: 8px; }
+    .bar { width: 64px; height: 8px; border-radius: 12px; }
+    .bar.on  { background-color: #BB9960; }
+    .bar.off { background-color: #E6DCD5; }
+    .prog-label { font-size: 14px; color: #B0A299; font-family: inherit; font-weight: 500; margin-top: 4px; }
 
     /* ══════════════════════════════
        RESPONSIVE
@@ -242,7 +273,7 @@
     }
 
     @media (max-width: 600px) {
-      .card { width: calc(100vw - 32px); padding: 24px 20px 22px; height: calc(100vh - 40px); }
+      .card { width: calc(100vw - 32px); padding: 24px 20px 22px; height: calc(100vh - 80px); }
       .opt-btn { height: 52px; font-size: 15px; }
       .bar { width: 35px; }
     }
@@ -254,17 +285,26 @@
 <div class="page">
 
   <!-- Side Patterns -->
-  <div class="pat-side left" aria-hidden="true">
-    <img src="../assets/images/haya pattern  4.svg" class="pat-layer p-l1" alt="" />
-    <img src="../assets/images/haya pattern 3.svg" class="pat-layer p-l2" alt="" />
+    <div class="pat-side left" aria-hidden="true">
+    <img src="../assets/images/p-left.svg" class="pat-img" alt="" />
   </div>
   <div class="pat-side right" aria-hidden="true">
-    <img src="../assets/images/haya pattern  4.svg" class="pat-layer p-l1" alt="" />
-    <img src="../assets/images/haya pattern 3.svg" class="pat-layer p-l2" alt="" />
+    <img src="../assets/images/p-right.svg" class="pat-img" alt="" />
+  </div>
+
+  <div class="top-logo-area">
+    <img src="../assets/images/haya-logo.png" class="header-logo-mini" alt="Haya Pharmacy" />
+  </div>
+
+  <div class="upper-header">
+    <div class="header-title-box">
+      <img src="../assets/images/question.svg" class="header-icon-svg" alt="" />
+      <h1 class="header-title">أسئلة عامة</h1>
+    </div>
   </div>
 
   <div class="card" role="main">
-    <form id="surveyForm" method="POST" style="width: 100%; display: flex; flex-direction: column; align-items: center; height: 100%;">
+    <form id="surveyForm" method="POST" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; flex: 1;">
       <input type="hidden" name="survey_answer" id="survey_answer" value="<?= isset($_SESSION['survey_responses']['gender.php']) ? $_SESSION['survey_responses']['gender.php'] : '' ?>">
       
       <h2 class="question">الجنس</h2>
@@ -288,18 +328,14 @@
 
       <!-- Navigation Buttons -->
       <div class="nav-row">
-        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn">
-          السابق
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" style="flex-direction: row-reverse;">
+          <span style="font-size: 18px;">السابق</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#BB9960" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
 
-        <button type="submit" class="nav-btn next-btn" id="btn-next">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          السؤال التالي
+        <button type="submit" class="nav-btn next-btn" style="flex-direction: row-reverse;">
+          <span style="font-size: 18px;">التالي</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
 
@@ -313,7 +349,7 @@
 </div>
 
 <script>
-  const CHECK_ICON = `<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5.5L4.5 9L13 1" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  const CHECK_ICON = `<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5.5L4.5 9L13 1" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
   window.onload = function() {
     const saved = document.getElementById('survey_answer').value;
@@ -335,3 +371,4 @@
 </script>
 </body>
 </html>
+

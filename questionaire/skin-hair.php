@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>استبيان اعراض الغدة الدرقية</title>
-  <meta name="description" content="استبيان طبي لتقييم اعراض الغدة الدرقية للمرضى - حياء فارماسي" />
+  <title>استبيان فحص نقص الفيتامينات والمعادن</title>
+  <meta name="description" content="استبيان طبي لتقييم أعراض نقص الفيتامينات والمعادن - حياء فارماسي" />
   <style>
     @font-face {
       font-family: 'MadaniArabic';
@@ -19,7 +19,6 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── Full viewport, NO scroll ── */
     html, body {
       width: 100%;
       height: 100%;
@@ -29,164 +28,173 @@
       color: #015645;
     }
 
-    /* ── Page shell: fills 100vh exactly ── */
     .page {
       position: relative;
       width: 100%;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      padding: 24px 0 20px;
     }
 
-    /* ══════════════════════════════
-       PRECISE SIDE PATTERNS (Figma Specs)
-    ══════════════════════════════ */
+    .top-logo-area {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      z-index: 10;
+    }
+
+    .header-logo-mini {
+      height: 45px;
+      object-fit: contain;
+    }
+
+    .upper-header {
+      width: min(1280px, calc(100vw - 64px));
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 25px;
+      z-index: 2;
+    }
+
+    .header-title-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #BB9960;
+    }
+
+    .header-title {
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .header-icon-svg {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
     .pat-side {
       position: fixed;
-      top: -44px;
+      top: 0;
       width: 288px;
       height: 100vh;
       pointer-events: none;
       z-index: 0;
     }
     .pat-side.left  { left: 0; }
-    .pat-side.right { right: 0; transform: scaleX(-1); }
+    .pat-side.right { right: 0; }
 
-    .pat-layer {
+    .pat-img {
       position: absolute;
       top: 0;
       left: 0;
-      width: 288px;
-      display: block;
-    }
-    /* Layer 1: 940.5px height, -180deg rotate, 1.0 opacity */
-    .p-l1 {
-      height: 940.5px;
-      transform: rotate(-180deg);
-      opacity: 1;
-    }
-    /* Layer 2: 459.7px height, 0.5 opacity */
-    .p-l2 {
-      height: 459.7px;
-      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    /* ══════════════════════════════
-       MAIN SURVEY CARD
-    ══════════════════════════════ */
     .card {
       position: relative;
       z-index: 1;
       background-color: #F6EDEA;
       border-radius: 14px;
       border: 1px solid rgba(187, 153, 96, 0.18);
+      width: min(1280px, calc(100vw - 64px));
+      height: min(815px, calc(100vh - 150px));
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
 
-      /* Responsive width — centered between the patterns */
-      width: min(1400px, calc(100vw - 200px));
-      /* Height fits in viewport with some breathing room */
-      height: calc(100vh - 80px);
-      max-height: 780px;
-
-      padding: 40px 60px 36px;
+    .card-body {
+      padding: 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex: 1;
+      min-height: 0;
     }
 
-    /* ── Title ── */
-    .title {
-      color: #BB9960;
-      font-size: clamp(17px, 1.6vw, 24px);
-      font-weight: 700;
-      text-align: right;     /* Aligned to right */
-      width: 100%;             /* Ensure full width for alignment */
-      line-height: 1.5;
-      margin-bottom: 60px;
-    }
-
-    /* ── Question ── */
     .question {
-      color: #015645;
-      font-size: clamp(15px, 1.35vw, 20px);
-      font-weight: 600;
-      text-align: right;     /* Aligned to right */
-      width: 100%;             /* Ensure full width for alignment */
-      line-height: 1.7;
-      margin-bottom: 80px; 
-    }
-
-    /* ══════════════════════════════
-       YES / NO TOGGLE BUTTONS
-    ══════════════════════════════ */
-    .toggle-row {
-      display: flex;
-      flex-direction: row-reverse; /* لا on left, نعم on right */
-      gap: 26px;
+      color: #000;
+      font-size: clamp(20px, 2vw, 26px);
+      font-weight: 800;
+      text-align: right;
       width: 100%;
-      max-width: 786px;            /* Fixed width to match Nav buttons */
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0;
+      margin-bottom: 45px;
     }
 
-    .tog-btn {
-      display: inline-flex;
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 960px;
+      margin-bottom: 20px;
+    }
+
+    .opt-btn {
+      display: flex;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 12px;
-      width: 380px; /* Slightly smaller width */
-      height: 54px;  /* Slightly smaller height */
-      border-radius: 50px;
-      font-family: 'MadaniArabic', sans-serif;
+      padding: 0 24px;
+      height: 60px;
+      border-radius: 100px;
+      font-family: inherit;
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      outline: none;
-      transition: all 0.15s ease;
-      flex-shrink: 0;
-    }
-
-    .tog-btn.on {
-      background-color: #015645;
-      color: #fff;
-      border: 2px solid #015645;
-    }
-    .tog-btn.off {
       background-color: transparent;
       color: #015645;
-      border: 2px solid #015645;
+      border: 1.5px solid #015645;
+      transition: all 0.2s;
+      width: 100%;
+      outline: none;
     }
 
-    .t-icon {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
+    .opt-btn.on {
+      background-color: #015645;
+      color: #fff;
+      border-color: #015645;
+    }
+
+    .opt-label {
+      font-family: inherit;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .opt-check {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid #015645;
+      background-color: #fff;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
     }
-    .t-icon svg {
-      width: 22px;
-      height: 22px;
-    }
-    .t-icon.empty-box {
-      border: 2px solid #015645;
-      border-radius: 4px;
-      width: 22px;
-      height: 22px;
+    .opt-btn.on .opt-check {
+      background-color: #fff;
+      border-color: #fff;
     }
 
-    /* ── Flex spacer pushes bottom down ── */
-    .spacer { flex: 1; min-height: 16px; }
+    .spacer { flex: 1; min-height: 10px; }
 
-    /* ══════════════════════════════
-       NAVIGATION BUTTONS
-    ══════════════════════════════ */
     .nav-row {
       width: 100%;
-      max-width: 786px;            /* Matches Yes/No buttons total width (380*2 + 26 gap) */
+      max-width: 960px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -198,105 +206,55 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 11px 24px;
+      gap: 10px;
+      padding: 12px 35px;
       border-radius: 9999px;
-      font-family: 'MadaniArabic', sans-serif;
-      font-size: clamp(13px, 1.1vw, 15px);
+      font-family: inherit;
+      font-size: 15px;
       font-weight: 600;
-      border: none;
       cursor: pointer;
-      outline: none;
-      transition: opacity 0.15s;
+      transition: all 0.2s;
       text-decoration: none;
+      outline: none;
     }
-    .nav-btn:hover { opacity: 0.88; }
 
-    /* Gold — السؤال السابق — visual RIGHT (start in RTL) */
-    .prev-btn {
+    .next-btn {
       background-color: #BB9960;
       color: #fff;
+      border: none;
+      width: 200px;
+      height: 56px;
     }
-    /* Green — السؤال التالي — visual LEFT (end in RTL) */
-    .next-btn {
-      background-color: #015645;
-      color: #fff;
-    }
-
-    .nav-btn svg { width: 16px; height: 16px; stroke-width: 2.2; flex-shrink: 0; }
-
-    /* ══════════════════════════════
-       PROGRESS BARS
-    ══════════════════════════════ */
-    .progress-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
-    }
-    .bars {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      align-items: center;
-    }
-    .bar {
-      width: 48px;
-      height: 5px;
-      border-radius: 3px;
-    }
-    .bar.on  { background-color: #015645; }
-    .bar.off { background-color: #CEC8C2; }
-
-    .prog-label {
-      font-size: 12px;
-      font-weight: 400;
-      color: #9E948E;
+    .prev-btn {
+      background-color: #F6EDEA;
+      color: #BB9960;
+      border: 1.5px solid rgba(187, 153, 96, 0.4);
+      width: 200px;
+      height: 56px;
     }
 
-    /* ══════════════════════════════
-       RESPONSIVE (tablet / mobile)
-    ══════════════════════════════ */
+    .next-btn:hover { background-color: #a38552; transform: translateY(-1px); }
+    .prev-btn:hover { background-color: #fff; transform: translateY(-1px); }
 
-    /* Tablet: scale buttons down proportionally */
-    @media (max-width: 1200px) {
-      .tog-btn {
-        width: 38vw;
-        height: 56px;
-        font-size: 16px;
-      }
-      .toggle-row { gap: 2vw; }
-    }
+    .nav-btn svg { width: 18px; height: 18px; }
+
+    .progress-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 10px; }
+    .bars { display: flex; flex-direction: row; gap: 8px; }
+    .bar { width: 64px; height: 8px; border-radius: 12px; }
+    .bar.on  { background-color: #BB9960; }
+    .bar.off { background-color: #E6DCD5; }
+    .prog-label { font-size: 14px; color: #B0A299; font-family: inherit; font-weight: 500; }
 
     @media (max-width: 900px) {
-      .card {
-        width: calc(100vw - 180px);
-        padding: 32px 36px 28px;
-      }
-      .tog-btn {
-        width: 38vw;
-        height: 52px;
-        font-size: 15px;
-        border-radius: 30px;
-      }
+      .card { width: calc(100vw - 120px); }
+      .options-grid { grid-template-columns: 1fr; gap: 12px; }
     }
 
     @media (max-width: 600px) {
-      .card {
-        width: calc(100vw - 32px);
-        padding: 24px 20px 22px;
-        border-radius: 12px;
-        height: calc(100vh - 40px);
-      }
-      .tog-btn {
-        width: 40vw;
-        height: 46px;
-        font-size: 13px;
-        border-radius: 25px;
-        gap: 6px;
-      }
-      .toggle-row { gap: 10px; }
-      .bar { width: 30px; }
+      .card { width: calc(100vw - 32px); height: calc(100vh - 80px); }
+      .card-body { padding: 24px 20px 22px; }
+      .opt-btn { height: 52px; font-size: 15px; }
+      .bar { width: 35px; }
     }
   </style>
 
@@ -307,97 +265,96 @@
 
   <!-- Side Patterns -->
   <div class="pat-side left" aria-hidden="true">
-    <img src="../assets/images/haya pattern  4.svg" class="pat-layer p-l1" alt="" />
-    <img src="../assets/images/haya pattern 3.svg" class="pat-layer p-l2" alt="" />
+    <img src="../assets/images/p-left.svg" class="pat-img" alt="" />
   </div>
-
   <div class="pat-side right" aria-hidden="true">
-    <img src="../assets/images/haya pattern  4.svg" class="pat-layer p-l1" alt="" />
-    <img src="../assets/images/haya pattern 3.svg" class="pat-layer p-l2" alt="" />
+    <img src="../assets/images/p-right.svg" class="pat-img" alt="" />
   </div>
 
-  <!-- ════ MAIN CARD ════ -->
+  <!-- Logo -->
+  <div class="top-logo-area">
+    <img src="../assets/images/haya-logo.png" class="header-logo-mini" alt="Haya Pharmacy" />
+  </div>
+
+  <!-- Upper Header -->
+  <div class="upper-header">
+    <div class="header-title-box">
+      <img src="../assets/images/arrow.svg" class="header-icon-svg" alt="" />
+      <h1 class="header-title">استبيان فحص نقص الفيتامينات والمعادن</h1>
+    </div>
+  </div>
+
+  <!-- Card -->
   <div class="card" role="main">
-    <form id="surveyForm" method="POST" style="width: 100%; display: flex; flex-direction: column; align-items: center; height: 100%;">
-      <input type="hidden" name="survey_answer" id="survey_answer" value="<?= isset($_SESSION['survey_responses']['skin-hair.php']) ? $_SESSION['survey_responses']['skin-hair.php'] : 'no' ?>">
+    <div class="card-body">
+      <form id="surveyForm" method="POST" style="width: 100%; display: flex; flex-direction: column; align-items: center; flex: 1;">
+        <input type="hidden" name="survey_answer" id="survey_answer" value="<?= isset($_SESSION['survey_responses']['skin-hair.php']) ? $_SESSION['survey_responses']['skin-hair.php'] : '' ?>">
 
-      <!-- Title -->
-      <h1 class="title">استبيان اعراض الغدة الدرقية</h1>
+        <h2 class="question">هل لديك تاريخ مرضي لفقر الدم أو انخفاض فيتامين د؟</h2>
 
-      <!-- Question -->
-      <p class="question">
-        هل عندچ تساقط شعر أو جفاف واضح بالبشرة؟
-      </p>
+        <!-- Yes / No Options -->
+        <div class="options-grid">
+          <!-- نعم -->
+          <button type="button" class="opt-btn <?= (isset($_SESSION['survey_responses']['skin-hair.php']) && $_SESSION['survey_responses']['skin-hair.php'] == 'yes') ? 'on' : '' ?>" onclick="selectSingle(this, 'yes')" id="opt-yes">
+            <span class="opt-check"></span>
+            <span class="opt-label">نعم</span>
+          </button>
 
-      <!-- YES / NO Buttons -->
-      <div class="toggle-row">
-        <!-- لا — NO -->
-        <button type="button" id="btn-no" class="tog-btn <?= (isset($_SESSION['survey_responses']['skin-hair.php']) && $_SESSION['survey_responses']['skin-hair.php'] == 'no') ? 'on' : ((!isset($_SESSION['survey_responses']['skin-hair.php'])) ? 'on' : 'off') ?>" onclick="pick('no')" aria-label="لا">
-          <span class="t-icon" id="icon-no"></span>
-          لا
-        </button>
+          <!-- لا -->
+          <button type="button" class="opt-btn <?= (isset($_SESSION['survey_responses']['skin-hair.php']) && $_SESSION['survey_responses']['skin-hair.php'] == 'no') ? 'on' : '' ?>" onclick="selectSingle(this, 'no')" id="opt-no">
+            <span class="opt-check"></span>
+            <span class="opt-label">لا</span>
+          </button>
+        </div>
 
-        <!-- نعم — YES -->
-        <button type="button" id="btn-yes" class="tog-btn <?= (isset($_SESSION['survey_responses']['skin-hair.php']) && $_SESSION['survey_responses']['skin-hair.php'] == 'yes') ? 'on' : 'off' ?>" onclick="pick('yes')" aria-label="نعم">
-          <span class="t-icon empty-box" id="icon-yes"></span>
-          نعم
-        </button>
-      </div>
+        <div class="spacer"></div>
 
-      <!-- Spacer -->
-      <div class="spacer"></div>
+        <!-- Navigation Buttons -->
+        <div class="nav-row">
+          <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" style="flex-direction: row-reverse;">
+            <span style="font-size: 18px;">السابق</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#BB9960" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
 
-      <!-- Navigation Buttons -->
-      <div class="nav-row">
-        <a href="<?= getPrevStepUrl() ?>" class="nav-btn prev-btn" id="btn-prev">
-          السؤال السابق
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <button type="submit" class="nav-btn next-btn" id="btn-next">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          السؤال التالي
-        </button>
-      </div>
+          <button type="submit" class="nav-btn next-btn" style="flex-direction: row-reverse;">
+            <span style="font-size: 18px;">التالي</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
 
-      <!-- Progress Indicator -->
-      <div class="progress-wrap">
-        <?= getProgressBarsHtml() ?>
-        <span class="prog-label">السؤال</span>
-      </div>
-    </form>
+        <!-- Progress Indicator -->
+        <div class="progress-wrap">
+          <?= getProgressBarsHtml() ?>
+          <span class="prog-label">السؤال</span>
+        </div>
+      </form>
+    </div>
   </div>
+
 </div>
 
 <script>
-  const CHECK_SVG = `<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10.5L8 14.5L16 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  const CHECK_ICON = `<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5.5L4.5 9L13 1" stroke="#015645" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
   window.onload = function() {
     const saved = document.getElementById('survey_answer').value;
-    pick(saved);
+    if (saved) {
+      const btn = document.getElementById('opt-' + saved);
+      if (btn) {
+        btn.classList.add('on');
+        btn.querySelector('.opt-check').innerHTML = CHECK_ICON;
+      }
+    }
   }
 
-  function pick(answer) {
-    const bNo   = document.getElementById('btn-no');
-    const bYes  = document.getElementById('btn-yes');
-    const iNo   = document.getElementById('icon-no');
-    const iYes  = document.getElementById('icon-yes');
-
-    if (answer === 'no') {
-      bNo.className  = 'tog-btn on';
-      bYes.className = 'tog-btn off';
-      iNo.className  = 't-icon'; iNo.innerHTML = CHECK_SVG;
-      iYes.className = 't-icon empty-box'; iYes.innerHTML = '';
-    } else {
-      bYes.className = 'tog-btn on';
-      bNo.className  = 'tog-btn off';
-      iYes.className = 't-icon'; iYes.innerHTML = CHECK_SVG;
-      iNo.className  = 't-icon empty-box'; iNo.innerHTML = '';
-    }
-    document.getElementById('survey_answer').value = answer;
+  function selectSingle(btn, value) {
+    document.querySelectorAll('.opt-btn').forEach(b => {
+      b.classList.remove('on');
+      b.querySelector('.opt-check').innerHTML = '';
+    });
+    btn.classList.add('on');
+    btn.querySelector('.opt-check').innerHTML = CHECK_ICON;
+    document.getElementById('survey_answer').value = value;
   }
 </script>
 </body>
