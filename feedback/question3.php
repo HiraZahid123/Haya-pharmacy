@@ -5,7 +5,10 @@
     
     <div id="question-view">
         <div class="card-header-custom d-flex justify-content-center align-items-center">
-            <div class="question-text"><?php echo ($survey_type === 'delivery') ? 'كيف تقيّم سرعة التوصيل؟' : 'كيف تقيّم وقت الانتظار؟'; ?></div>
+            <div class="question-text">
+                <div class="d-desktop"><?php echo ($survey_type === 'delivery') ? 'كيف تقيّم سرعة التوصيل؟' : 'كيف تقيّم وقت الانتظار؟'; ?></div>
+                <div class="d-mobile">هل استلمت جميع المنتجات التي طلبتها؟</div>
+            </div>
         </div>
 
         <div class="emojis-container mt-5" dir="ltr">

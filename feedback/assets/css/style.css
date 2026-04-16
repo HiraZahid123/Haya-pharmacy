@@ -331,7 +331,21 @@ body {
   background-color: rgba(1, 86, 69, 0.05);
 }
 
+.d-mobile {
+  display: none !important;
+}
+
+.d-desktop {
+  display: block !important;
+}
+
 @media (max-width: 768px) {
+  .d-mobile {
+    display: block !important;
+  }
+  .d-desktop {
+    display: none !important;
+  }
   .header-container {
     display: flex;
     flex-direction: column;

@@ -5,7 +5,10 @@
     
     <div id="question-view">
         <div class="card-header-custom d-flex justify-content-center align-items-center">
-            <div class="question-text"><?php echo ($survey_type === 'delivery') ? 'كيف كانت تجربة التوصيل؟' : 'كيف كانت زيارتك اليوم ؟'; ?></div>
+            <div class="question-text">
+                <div class="d-desktop"><?php echo ($survey_type === 'delivery') ? 'كيف كانت تجربة التوصيل؟' : 'كيف كانت زيارتك اليوم ؟'; ?></div>
+                <div class="d-mobile">ما مدى سهولة طلب الأوردر؟</div>
+            </div>
         </div>
 
         <div class="emojis-container mt-5" dir="ltr">
