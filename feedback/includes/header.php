@@ -26,7 +26,7 @@ $survey_type = $_SESSION['survey_type'] ?? 'visit';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Google Fonts: Tajawal -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.9">
+    <link rel="stylesheet" href="assets/css/style.css?v=3.0">
 </head>
 
 <body>
