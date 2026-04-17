@@ -143,7 +143,7 @@ include __DIR__ . '/../includes/header.php';
                         </div>
                         <div class="haya-term-list-item">
                             <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
-                            <p>يختار العضو خدمة واحدة فقط من بين: (<strong>Skin Analyzer / InBody / Hair Analyzer</strong>).</p>
+                            <p>يختار العضو خدمة واحدة فقط من بين: (<strong> فحص الشعر Hair analyzer - تحليل الجسم بجهاز Inbody - فحص البشرة Skin analyzer</strong>).</p>
                         </div>
 
                         <div class="haya-term-list-item">
@@ -212,7 +212,7 @@ include __DIR__ . '/../includes/header.php';
                         </div>
                         <div class="haya-term-list-item">
                             <img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Tick" class="haya-tick-icon">
-                            <p><strong>الإخلاء من المسؤولية:</strong> الفحوصات المقدمة (InBody/Skin/Hair) هي فحوصات استرشادية، ولا تغني عن الاستشارة الطبية المتخصصة في الحالات المرضية.</p>
+                            <p><strong>الإخلاء من المسؤولية:</strong> الفحوصات المقدمة ( فحص الشعر Hair analyzer - تحليل الجسم بجهاز Inbody - فحص البشرة Skin analyzer) هي فحوصات استرشادية، ولا تغني عن الاستشارة الطبية المتخصصة في الحالات المرضية.</p>
                         </div>
                     </div>
                 </div>
