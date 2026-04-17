@@ -3500,7 +3500,7 @@ select.form-control {
     inset: 0;
     background-color: rgba(1, 86, 69, 0.85);
     /* Haya Dark Green Overlay */
-    z-index: 1000;
+    z-index: 10001;
     display: flex;
     align-items: center;
     justify-content: center;
