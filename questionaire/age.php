@@ -13,6 +13,17 @@
       font-style: normal;
       font-display: swap;
     }
+  
+    @font-face {
+      font-family: 'MadaniArabic';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
+    @font-face {
+      font-family: 'Madani Arabic Demo';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
   </style>
 
   <style>
@@ -252,6 +263,17 @@
       .card { width: calc(100vw - 120px); }
       .options-grid { grid-template-columns: 1fr; }
     }
+  
+    @font-face {
+      font-family: 'MadaniArabic';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
+    @font-face {
+      font-family: 'Madani Arabic Demo';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
   </style>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
@@ -360,3 +382,4 @@
 </script>
 </body>
 </html>
+

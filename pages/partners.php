@@ -20,6 +20,10 @@ include __DIR__ . '/../includes/header.php';
             <a href="https://wa.link/11ohbt" target="_blank" class="haya-social-item"><i class="fab fa-whatsapp"></i></a>
         </div>
 
+        <button class="header-hamburger-partners" id="partnersMenuToggle" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
         <!-- Right: Logo -->
         <div class="haya-main-logo">
             <img src="<?= SITE_URL ?>/assets/images/haya-logo.png" alt="Haya Logo">

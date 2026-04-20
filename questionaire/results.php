@@ -102,6 +102,17 @@ if (!empty($responses) && !isset($responses['SAVED_TO_DB'])) {
       src: url('../assets/fonts/MadaniArabicDemo.otf') format('opentype');
       font-weight: normal; font-style: normal; font-display: swap;
     }
+  
+    @font-face {
+      font-family: 'MadaniArabic';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
+    @font-face {
+      font-family: 'Madani Arabic Demo';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
   </style>
 
   <style>
@@ -211,6 +222,17 @@ if (!empty($responses) && !isset($responses['SAVED_TO_DB'])) {
       .results-grid { grid-template-columns: 1fr; }
       .card { width: calc(100vw - 32px); padding: 30px 20px; }
     }
+  
+    @font-face {
+      font-family: 'MadaniArabic';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
+    @font-face {
+      font-family: 'Madani Arabic Demo';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
   </style>
 </head>
 <body>
@@ -303,3 +325,4 @@ if (!empty($responses) && !isset($responses['SAVED_TO_DB'])) {
 </div>
 </body>
 </html>
+

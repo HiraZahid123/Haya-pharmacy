@@ -13,6 +13,17 @@
       font-style: normal;
       font-display: swap;
     }
+  
+    @font-face {
+      font-family: 'MadaniArabic';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
+    @font-face {
+      font-family: 'Madani Arabic Demo';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
   </style>
 
   <style>
@@ -159,6 +170,17 @@
         order: -1;
       }
     }
+  
+    @font-face {
+      font-family: 'MadaniArabic';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
+    @font-face {
+      font-family: 'Madani Arabic Demo';
+      src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+      unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
+    }
   </style>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
@@ -191,3 +213,4 @@
 </div>
 </body>
 </html>
+

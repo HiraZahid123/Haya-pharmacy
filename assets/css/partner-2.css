@@ -12,11 +12,12 @@
     font-display: swap;
 }
 
-/* Patch to fix broken numbers in the Madani font */
+/* Patch to fix broken numbers and Latin chars in the Madani font */
 @font-face {
     font-family: 'Madani Arabic Demo';
-    src: local('Segoe UI'), local('Arial'), local('Helvetica');
-    unicode-range: U+0030-0039, U+0660-0669, U+06F0-06F9;
+    src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+    /* Cover Latin numbers (0-9), basic symbols (+ - . /), and Latin letters (a-z, A-Z) */
+    unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
 }
 
 /* ── CSS Custom Properties (Design Tokens) ─────────────────── */
@@ -2912,11 +2913,14 @@ select.form-control {
     padding: 8rem 5%;
     direction: rtl;
     position: relative;
+    overflow: hidden;
 }
 
 .haya-terms-container {
     max-width: 1250px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .haya-terms-main-title {
@@ -2991,11 +2995,13 @@ select.form-control {
 
 /* Why Choose Haya Section */
 .haya-partners-why {
-    background: #bc9362;
+    background-color: #bc9362;
     /* Gold background */
     padding: 6rem 5%;
     color: #fff;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .haya-why-container {
@@ -3175,11 +3181,14 @@ select.form-control {
     padding: 6rem 5%;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 .haya-cta-container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .haya-cta-title {
@@ -3608,7 +3617,7 @@ select.form-control {
     color: #333;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     text-align: right;
-    font-family: var(--font-arabic);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     transition: all 0.3s ease;
     box-sizing: border-box;
 }
@@ -3637,6 +3646,7 @@ input[type="date"].pt-form-control {
 
 .pt-form-control::placeholder {
     color: #bbb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .pt-btn-submit {
@@ -3848,10 +3858,26 @@ input[type="date"].pt-form-control {
 
 @media (max-width: 991px) {
     .header-hamburger-partners {
-        display: block;
+        display: block !important;
+        background: none;
+        border: none;
+        color: #015645;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        order: 1; /* Keep it on the left */
     }
     .haya-top-socials {
         display: none !important;
+    }
+    .haya-main-logo {
+        order: 2; /* Keep it on the right */
+    }
+    .haya-top-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 }
 
@@ -3922,4 +3948,45 @@ input[type="date"].pt-form-control {
         width: 0;
         display: none;               /* Chrome / Safari */
     }
-}
+}
+/* -- Mobile Menu Customization ------------------------------ */
+.mobile-menu {
+    background: rgba(1, 86, 69, 0.98) !important; /* Haya Dark Green Overlay */
+}
+
+.mobile-menu-close {
+    background-color: #015645 !important; /* Haya Green background for the X button */
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu-socials {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: auto;
+    padding-bottom: 2rem;
+    width: 100%;
+}
+
+.mobile-menu-socials .haya-social-item {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #BB9960 !important; /* Haya Gold */
+    color: #fff !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.mobile-menu-socials .haya-social-item:hover {
+    transform: scale(1.1);
+}
+
+.mobile-menu-logo {
+    height: 4rem;
+    filter: brightness(0) invert(1);
+}

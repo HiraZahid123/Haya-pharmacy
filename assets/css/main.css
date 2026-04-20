@@ -12,11 +12,12 @@
     font-display: swap;
 }
 
-/* Patch to fix broken numbers in the Madani font */
+/* Patch to fix broken numbers and Latin chars in the Madani font */
 @font-face {
     font-family: 'Madani Arabic Demo';
-    src: local('Segoe UI'), local('Arial'), local('Helvetica');
-    unicode-range: U+0030-0039, U+0660-0669, U+06F0-06F9;
+    src: local('Arial'), local('Helvetica'), local('system-ui'), local('sans-serif');
+    /* Cover Latin numbers (0-9), basic symbols (+ - . /), and Latin letters (a-z, A-Z) */
+    unicode-range: U+0020-007E, U+0660-0669, U+06F0-06F9;
 }
 
 /* ── CSS Custom Properties (Design Tokens) ─────────────────── */
