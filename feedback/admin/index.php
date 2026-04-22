@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>تسجيل الدخول - حيا للصيدليات</title>
     <link rel="icon" type="image/png" href="../assets/images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/admin-style.css?v=2.4">
+    <link rel="stylesheet" href="../assets/css/admin-style.css?v=2.7">
     <style>
         .bg-pattern {
             position: fixed !important;

@@ -48,8 +48,8 @@ body::before {
   pointer-events: none;
   opacity: 0.4;
   background-image:
-    url("../images/haya-pattern-1.svg"), url("../images/haya-pattern-2.svg"),
-    url("../images/haya-pattern-3.svg"), url("../images/haya-pattern-4.svg");
+    url("../images/haya pattern  1.svg"), url("../images/haya pattern  2.svg"),
+    url("../images/haya pattern 3.svg"), url("../images/haya pattern  4.svg");
   background-position:
     top left,
     top right,
@@ -720,7 +720,7 @@ body.login-page::before {
   height: 300px;
   top: 0;
   left: 0;
-  background-image: url("../images/haya-pattern-1.svg");
+  background-image: url("../images/haya pattern  1.svg");
   background-position: top left;
   transform: rotate(0deg);
 }
@@ -730,7 +730,7 @@ body.login-page::before {
   width: 214px;
   top: 0;
   right: 0;
-  background-image: url("../images/haya-pattern-2.svg");
+  background-image: url("../images/haya pattern  2.svg");
   background-position: center;
   transform: rotate(180deg);
 }
@@ -740,7 +740,7 @@ body.login-page::before {
   width: 210px;
   bottom: 0;
   left: 0;
-  background-image: url("../images/haya-pattern-3.svg");
+  background-image: url("../images/haya pattern 3.svg");
   background-position: bottom left;
   transform: rotate(180deg);
 }
@@ -750,7 +750,7 @@ body.login-page::before {
   width: 210px;
   bottom: 0;
   right: 0;
-  background-image: url("../images/haya-pattern-4.svg");
+  background-image: url("../images/haya pattern  4.svg");
   background-position: center;
   transform: rotate(0deg);
 }
