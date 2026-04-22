@@ -43,40 +43,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../assets/css/admin-style.css?v=2.4">
     <style>
         .bg-pattern {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            opacity: 0.15;
-            z-index: 1;
-            background-size: contain;
-            background-repeat: no-repeat;
-            pointer-events: none;
+            position: fixed !important;
+            width: 300px !important;
+            height: 300px !important;
+            opacity: 0.25 !important;
+            z-index: 1 !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            pointer-events: none !important;
+            display: block !important;
         }
         .pattern-top-left {
-            top: 0; left: 0;
-            background-image: url('<?= SITE_URL ?>/feedback/assets/images/haya-pattern-1.svg');
-            background-position: top left;
-            transform: rotate(0deg);
+            top: 0 !important;
+            left: 0 !important;
+            background-image: url('../assets/images/haya-pattern-1.svg') !important;
         }
         .pattern-top-right {
-            top: 0; right: 0;
-            background-image: url('<?= SITE_URL ?>/feedback/assets/images/haya-pattern-2.svg');
-            background-position: center;
-            transform: rotate(180deg);
+            top: 0 !important;
+            right: 0 !important;
+            background-image: url('../assets/images/haya-pattern-2.svg') !important;
         }
         .pattern-bottom-left {
-            bottom: 0; left: 0;
-            background-image: url('<?= SITE_URL ?>/feedback/assets/images/haya-pattern-3.svg');
-            background-position: bottom left;
-            transform: rotate(180deg);
+            bottom: 0 !important;
+            left: 0 !important;
+            background-image: url('../assets/images/haya-pattern-3.svg') !important;
         }
         .pattern-bottom-right {
-            bottom: 0; right: 0;
-            background-image: url('<?= SITE_URL ?>/feedback/assets/images/haya-pattern-4.svg');
-            background-position: center;
-            transform: rotate(0deg);
+            bottom: 0 !important;
+            right: 0 !important;
+            background-image: url('../assets/images/haya-pattern-4.svg') !important;
         }
-        .login-wrapper { z-index: 5; }
+        .login-wrapper { 
+            position: relative !important;
+            z-index: 10 !important; 
+        }
     </style>
 </head>
 
