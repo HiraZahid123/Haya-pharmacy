@@ -4,7 +4,7 @@
 -- Database: haya_pharmacy
 -- ============================================================
 
-USE haya_pharmacy;
+USE hayajvez_hayacards;
 
 -- ── Pioneers Card ──────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS pioneers_cards (

@@ -1,6 +1,6 @@
 -- Database Schema for Haya Pharmacy
-CREATE DATABASE IF NOT EXISTS `haya_pharmacy` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `haya_pharmacy`;
+CREATE DATABASE IF NOT EXISTS `hayajvez_hayacards` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `hayajvez_hayacards`;
 
 -- 1. Table for Partners
 CREATE TABLE IF NOT EXISTS `partners_cards` (
