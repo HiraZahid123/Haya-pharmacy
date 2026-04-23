@@ -327,15 +327,16 @@ include __DIR__ . '/../includes/header.php';
             </div>
             <div class="success-top-content">
                 <div class="success-icon"><img src="<?= SITE_URL ?>/assets/images/tick.svg" alt="Success" style="width: 5rem; height: auto;"></div>
-                <h2 class="success-title">تم تفعيل كارت الأوائل بنجاح</h2>
-                
+                <h2 class="success-title">تم تسجيلك بنجاح في قائمة الانتظار لبطاقة الأوائل من صيدلية حيا.
+
                 <div class="success-body-rows">
-                    <p class="success-body-text">يمكنك الآن الاستفادة من مزايا وخصومات كارت الأوائل في صيدلية حيا.</p>
-                    <p class="success-body-text">استخدم بطاقتك عند زيارتك للصيدلية للحصول على العروض والخدمات الحصرية.</p>
+                    <p class="success-body-text">هذه البطاقة تمنح حامليها مزايا حصرية وعروض خاصة عند افتتاح الصيدلية.</p>
+                    <p class="success-body-text">سنقوم بالتواصل معك قريباً لإعلامك عند توفر البطاقة.</p>
                 </div>
 
                 <div class="success-footer-note">
-                    نتطلع لخدمتك 💚
+                   شكراً لاهتمامك، ونتطلع لخدمتك قريباً 💚
+
                 </div>
             </div>
             
