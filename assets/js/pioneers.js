@@ -72,7 +72,7 @@
 
                 var submitBtn = form.querySelector('.pt-btn-submit');
                 submitBtn.disabled = true;
-                submitBtn.textContent = 'جارٍ التفعيل...';
+                submitBtn.textContent = 'جارٍ التسجيل...';
 
                 fetch(SITE_URL + '/handlers/register-pioneer.php', {
                     method: 'POST',
@@ -95,7 +95,7 @@
                     })
                     .finally(function () {
                         submitBtn.disabled = false;
-                        submitBtn.textContent = 'فعل الآن';
+                        submitBtn.textContent = 'سجل الان';
                     });
             });
         }
@@ -112,10 +112,6 @@
 
         if (!name || !name.value.trim() || name.value.trim().length < 3) {
             showError('err_name', 'الاسم الكامل مطلوب (3 أحرف على الأقل)');
-            valid = false;
-        }
-        if (!business || !business.value.trim()) {
-            showError('err_business', 'جهة العمل مطلوبة');
             valid = false;
         }
         if (!mobile || !/^[0-9+ ]{7,20}$/.test(mobile.value.trim())) {
@@ -174,7 +170,7 @@
         btn.href = '#';
         btn.className = 'haya-sticky-cta open-reg-modal';
         btn.setAttribute('aria-label', 'تفعيل الآن');
-        btn.innerHTML = '<i class="fas fa-check-circle"></i><span>سجّل الآن</span>';
+        btn.innerHTML = '<i class="fas fa-check-circle"></i><span>سجل الان</span>';
         document.body.appendChild(btn);
 
         var heroBtn = document.querySelector('.haya-btn-dark-green');

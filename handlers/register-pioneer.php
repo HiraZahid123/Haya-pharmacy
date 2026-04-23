@@ -34,9 +34,6 @@ $errors = [];
 if (mb_strlen($name) < 3) {
     $errors[] = 'الاسم يجب أن يكون 3 أحرف على الأقل';
 }
-if (empty($business)) {
-    $errors[] = 'جهة العمل مطلوبة';
-}
 if (!preg_match('/^[0-9+]{7,20}$/', $mobile)) {
     $errors[] = 'رقم الهاتف غير صحيح';
 }
@@ -73,6 +70,13 @@ try {
             UNIQUE KEY (`mobile_number`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     ");
+    
+    // Check if business_name column exists (migration hotfix)
+    $checkCol = $db->query("SHOW COLUMNS FROM `pioneers_cards` LIKE 'business_name'");
+    if (!$checkCol->fetch()) {
+        $db->exec("ALTER TABLE `pioneers_cards` ADD COLUMN `business_name` varchar(255) DEFAULT NULL AFTER `mobile_number` ");
+    }
+
 
     $stmt = $db->prepare('SELECT id FROM pioneers_cards WHERE mobile_number = ?');
     $stmt->execute([$mobile]);

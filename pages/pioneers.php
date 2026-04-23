@@ -47,7 +47,7 @@ include __DIR__ . '/../includes/header.php';
                 <p class="haya-hero-subtitle">
                     تقديرًا لثقتك ووجودك معنا في بداية رحلتنا، ندعوك للتسجيل الآن والانضمام إلى قائمة الانتظار للاستفادة من الخصومات والخدمات المميزة عند افتتاح الصيدلية.
                 </p>
-                <a href="#" class="haya-btn-dark-green open-reg-modal">فعّل البطاقة الآن</a>
+                <a href="#" class="haya-btn-dark-green open-reg-modal">سجل الان</a>
             </div>
             <!-- Right: Visual -->
             <div class="haya-hero-visual">
@@ -301,11 +301,6 @@ include __DIR__ . '/../includes/header.php';
                     <span class="form-error" id="err_mobile"></span>
                 </div>
 
-                <div class="pt-form-group">
-                    <label for="reg_business">جهة العمل</label>
-                    <input type="text" id="reg_business" name="business" placeholder="اسم الشركة أو جهة العمل" required class="pt-form-control">
-                    <span class="form-error" id="err_business"></span>
-                </div>
 
                 <div class="pt-form-group">
                     <label for="reg_gender">ذكر/أنثى</label>
@@ -321,7 +316,7 @@ include __DIR__ . '/../includes/header.php';
 
                 <button type="submit" class="pt-btn-submit">
                     <i class="fas fa-user-plus"></i>
-                    فعل الآن
+                    سجل الان
                 </button>
             </form>
         </div>

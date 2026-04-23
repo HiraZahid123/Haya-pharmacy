@@ -81,6 +81,13 @@ try {
             UNIQUE KEY (`mobile_number`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     ");
+    
+    // Check if business_name column exists (migration hotfix)
+    $checkCol = $db->query("SHOW COLUMNS FROM `partners_cards` LIKE 'business_name'");
+    if (!$checkCol->fetch()) {
+        $db->exec("ALTER TABLE `partners_cards` ADD COLUMN `business_name` varchar(255) DEFAULT NULL AFTER `mobile_number` ");
+    }
+
 
     $stmt = $db->prepare('SELECT id FROM partners_cards WHERE mobile_number = ?');
     $stmt->execute([$mobile]);
